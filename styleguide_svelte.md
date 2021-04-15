@@ -21,7 +21,7 @@ All new source files consist of the following, **in order**:
 
 Exactly one blank line separates each section.
 ## 3.1 License information
-IF license or copyright information belongs in a file, it belongs here.
+If license or copyright information belongs in a file, it belongs here.
 ## 3.2 Script implementation
 ### 3.2.1 module imports
 Import statements must not be line wrapped and are therefore an exception to the 80-column limit.
@@ -149,7 +149,7 @@ Computed properties may only be used in classes when the property is a symbol. D
 
 Where it does not interfere with readability, prefer module-local functions over private static methods.
 
-Static methods should only be called on the base class itself. Static methods should not be called on variables containing a dynamic instance that may be either the constructor or a subclass constructor (and must be defined with @nocollapse if this is done), and must not be called directly on a subclass that doesn’t define the method itself.
+Static methods should only be called on the base class itself. Static methods should not be called on variables containing a dynamic instance that may be either the constructor or a subclass constructor, and must not be called directly on a subclass that doesn’t define the method itself.
 
 Do not use JavaScript getter and setter properties. They are potentially surprising and difficult to reason about, and have limited support in the compiler. Provide ordinary methods instead.
 
@@ -175,3 +175,155 @@ Numbers may be specified in decimal, hex, octal, or binary. Use exactly 0x, 0o, 
 
 #### 3.2.5.7 Control structures
 ##### 3.2.5.7.1 For loops
+With ES6, the language now has three different kinds of for loops. All may be used, though for-of loops should be preferred when possible.
+##### 3.2.5.7.2 Switch statements
+Within a switch block, each statement group either terminates abruptly (with a break, return or thrown exception), or is marked with a comment to indicate that execution will or might continue into the next statement group. 
+
+Each switch statement includes a default statement group, even if it contains no code. The default statement group must be last.
+##### 3.2.5.7.3 this
+Only use this in class constructors and methods, in arrow functions defined within class constructors and methods, or in functions that have an explicit @this declared in the immediately-enclosing function’s JSDoc.
+
+Never use this to refer to the global object, the context of an eval, the target of an event, or unnecessarily call()ed or apply()ed functions.
+### 3.2.6 Naming
+Identifiers use only ASCII letters and digits, and, in a small number of cases noted below, underscores and very rarely (when required by frameworks like Angular) dollar signs.
+
+Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as it is far more important to make your code immediately understandable by a new reader. Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word.
+#### 3.2.6.1 Package names
+Package names are all lowerCamelCase.
+#### 3.2.6.2 Class names
+Class, interface, record, and typedef names are written in UpperCamelCase.
+#### 3.2.6.3 Method names
+Method names are written in lowerCamelCase.
+#### 3.2.6.4 Enum names
+Enum names are written in UpperCamelCase.
+#### 3.2.6.5 Constant names
+Constant names use CONSTANT_CASE.
+#### 3.2.6.6 Non-constant field names
+Non-constant field names are written in lowerCamelCase.
+#### 3.2.6.7 Parameter names
+Parameter names are written in lowerCamelCase.
+#### 3.2.6.8 Local variable names
+Local variable names are written in lowerCamelCase.
+
+## 3.3 Main tag implementation
+### 3.3.1 HTML Style Rules
+#### 3.3.1.1 Document type
+Use HTML5.
+
+HTML5 syntax is preferred for all HTML documents: <!DOCTYPE html>.
+
+Although fine with HTML, do not close void elements, i.e. write <br>, not <br />.
+#### 3.3.1.2 HTML Validity
+Use valid HTML where possible.
+
+Use valid HTML code unless that is not possible due to otherwise unattainable performance goals regarding file size.
+
+Use tools such as the [W3C HTML validator](https://validator.w3.org/nu/) to test.
+
+Using valid HTML is a measurable baseline quality attribute that contributes to learning about technical requirements and constraints, and that ensures proper HTML usage.
+
+    <!-- Recommended -->
+    <!DOCTYPE html>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <article>This is only a test.</article>
+    
+    <!-- Not recommended -->
+    <title>Test</title>
+    <article>This is only a test.
+
+#### 3.3.1.3 Semantics
+Use HTML according to its purpose.
+
+Use elements for what they have been created for. For example, use heading elements for headings, p elements for paragraphs, a elements for anchors, etc.
+#### 3.3.1.4 type attributes
+Omit type attributes for style sheets and scripts.
+
+Do not use type attributes for style sheets (unless not using CSS) and scripts (unless not using JavaScript).
+
+Specifying type attributes in these contexts is not necessary as HTML5 implies text/css and text/javascript as defaults. This can be safely done even for older browsers.
+### 3.3.2 HTML Formatting Rules
+#### 3.3.2.1 General Formatting
+Use a new line for every block, list or table element, and indent every such child element by 4 spaces.
+
+Independent of the styling of an element, put every block, list, or table element on a new line.
+
+Also, indent them if they are child elements of a block, list, or table element.
+#### 3.3.2.2 HTML Line-Wrapping
+Break long lines (optional).
+
+While there is no column limit recommendation for HTML, you may consider wrapping long lines if it significantly improves readability.
+
+When line-wrapping, each continuation line should be indented at least 4 additional spaces from the original line.
+#### 3.3.2.3 HTML Quotation Marks
+When quoting attributes values, use double quotation marks.
+
+Use double ("") rather than single quotation marks ('') around attribute values.
+
+## 3.4 Style implementation
+### 3.4.1 CSS Style Rules
+#### 3.4.1.1 CSS Validity
+Use valid CSS where possible.
+
+Unless dealing with CSS validator bugs or requiring proprietary syntax, use valid CSS code.
+
+Use tools such as the [W3C CSS validator](https://jigsaw.w3.org/css-validator/) to test.
+#### 3.4.1.2 ID and Class naming
+Use meaningful or generic ID and class names.
+
+Instead of presentational or cryptic names, always use ID and class names that reflect the purpose of the element in question, or that are otherwise generic.
+
+Names that are specific and reflect the purpose of the element should be preferred as these are most understandable and the least likely to change.
+
+Generic names are simply a fallback for elements that have no particular or no meaning different from their siblings. They are typically needed as “helpers.”
+
+Using functional or generic names reduces the probability of unnecessary document or template changes.
+#### 3.4.1.3 ID and Class Name Style
+Use ID and class names that are as short as possible but as long as necessary.
+
+Try to convey what an ID or class is about while being as brief as possible.
+
+Using ID and class names this way contributes to acceptable levels of understandability and code efficiency.
+#### 3.4.1.4 Shorthand Properties
+Use shorthand properties where possible.
+
+CSS offers a variety of [shorthand](https://www.w3.org/TR/CSS21/about.html#shorthand) properties (like font) that should be used whenever possible, even in cases where only one value is explicitly set.
+
+Using shorthand properties is useful for code efficiency and understandability.
+#### 3.4.1.5 0 and Units
+Omit unit specification after "0" values, unless required.
+
+Always use [relative units](https://www.w3schools.com/cssref/css_units.asp), unless it is not possible otherwise.
+#### 3.4.1.6 Leading 0s
+Omit leading "0"s in values.
+
+Do not put 0s in front of values or lengths between -1 and 1.
+#### 3.4.1.7 Hexadecimal Notation
+Use 3 character hexadecimal notation where possible.
+
+For color values that permit it, 3 character hexadecimal notation is shorter and more succinct.
+#### 3.4.1.8 ID and Class Name Delimiters
+Separate words in ID and class names by a hyphen.
+
+Do not concatenate words and abbreviations in selectors by any characters (including none at all) other than hyphens, in order to improve understanding and scannability.
+### 3.4.2 CSS Formatting Rules
+#### 3.4.2.1 Declaration Order
+Alphabetize declarations in order to achieve consistent code in a way that is easy to remember and maintain.
+
+Ignore vendor-specific prefixes for sorting purposes. However, multiple vendor-specific prefixes for a certain CSS property should be kept sorted (e.g. -moz prefix comes before -webkit).
+#### 3.4.2.2 Block Content Indentation
+Indent all block content (4 spaces), that is rules within rules as well as declarations, so to reflect hierarchy and improve understanding.
+#### 3.4.2.3 Declaration Stops
+Use a semicolon after every declaration.
+#### 3.4.2.4 Property Name Stops
+Use a space after a property name’s colon.
+#### 3.4.2.5 Declaration Block Separation
+Use a space between the last selector and the declaration block.
+#### 3.4.2.6 Selector and Declaration Separation
+Separate selectors and declarations by new lines.
+#### 3.4.2.7 Rule Separation
+Separate rules by new lines.
+#### 3.4.2.8 CSS Quotation Marks
+Use single ('') rather than double ("") quotation marks for attribute selectors and property values.
+
+Do not use quotation marks in URI values (url()).
