@@ -5,6 +5,8 @@
 <main>
     <h1>Hello, World.</h1>
     <p>This is an example component.</p>
+
+    <button type="button" class="btn btn-primary">Primary</button>
 </main>
 
 <style>
