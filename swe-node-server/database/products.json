@@ -1,13 +1,35 @@
 [
   {
-    "id": 1,
-    "name": "Luft",
-    "anzahl": 1,
+    "id": 13105,
+    "name": "Avocado",
+    "anzahl": 329,
     "herkunft": "Deutschland",
-    "kategorie": [],
-    "verkaufspreis": "3€",
-    "einkaufspreis": "0€",
+    "kategorie": ["Gemüse"],
+    "verkaufspreis": "2,49€",
+    "einkaufspreis": "0,49€",
     "mhd": "12-08-2022",
-    "bezugsquelle": "Stuttgarter Luftwerke"
+    "bezugsquelle": "Manjas Gemüsehof"
+  },
+  {
+    "id": 12007,
+    "name": "Broccoli",
+    "anzahl": 1,
+    "herkunft": "Frankreich",
+    "kategorie": ["Gemüse"],
+    "verkaufspreis": "2,99€",
+    "einkaufspreis": "1,38€",
+    "mhd": "07-05-2021",
+    "bezugsquelle": "Dieter Broccoli GmbH"
+  },
+  {
+    "id": 31084,
+    "name": "Tomate",
+    "anzahl": 99,
+    "herkunft": "Spanien",
+    "kategorie": ["Gemüse"],
+    "verkaufspreis": "1,99€",
+    "einkaufspreis": "0,29€",
+    "mhd": "30-07-2022",
+    "bezugsquelle": "Tomaten Tom"
   }
 ]

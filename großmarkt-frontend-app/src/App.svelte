@@ -1,6 +1,7 @@
 <script>
 	import Example from "./components/Example.svelte"
 	import Product from "./components/list/Product.svelte";
+
 </script>
 
 <main>
