@@ -60,6 +60,28 @@ app.put('/api/v1/products', (req, res) => {
     res.sendStatus(200)
 });
 
+//delete existing product - requires product id
+app.delete('/api/v1/products', (req, res)=> {
+    let deleteID = req.body.id;
+
+    let products = JSON.parse(fs.readFileSync('./database/products.json'));
+
+    let deleteObject;
+    //find old item in array
+    products.forEach(element => {
+        if(element.id = deleteID){
+            deleteObject = element;
+        }
+    });
+
+    products = products.filter(item => item != deleteObject);
+    let data = JSON.stringify(products);
+    
+    fs.writeFileSync('database/products.json', data);
+
+    res.sendStatus(204);
+});
+
 //Suppliers
 
 //get all suppliers
@@ -112,6 +134,28 @@ app.put('/api/v1/suppliers', (req, res) => {
     res.sendStatus(200)
 });
 
+//delete existing supplier - requires supplier id
+app.delete('/api/v1/products', (req, res)=> {
+    let deleteID = req.body.id;
+
+    let suppliers = JSON.parse(fs.readFileSync('./database/suppliers.json'));
+
+    let deleteObject;
+    //find old item in array
+    suppliers.forEach(element => {
+        if(element.id = deleteID){
+            deleteObject = element;
+        }
+    });
+
+    suppliers = suppliers.filter(item => item != deleteObject);
+    let data = JSON.stringify(suppliers);
+    
+    fs.writeFileSync('database/suppliers.json', data);
+
+    res.sendStatus(204);
+});
+
 //Producers
 
 //get all producers
@@ -162,4 +206,26 @@ app.put('/api/v1/producers', (req, res) => {
     fs.writeFileSync('database/producers.json', data)
 
     res.sendStatus(200)
+});
+
+//delete existing producer - requires supplier id
+app.delete('/api/v1/products', (req, res)=> {
+    let deleteID = req.body.id;
+
+    let producers = JSON.parse(fs.readFileSync('./database/producers.json'));
+
+    let deleteObject;
+    //find old item in array
+    producers.forEach(element => {
+        if(element.id = deleteID){
+            deleteObject = element;
+        }
+    });
+
+    producers = producers.filter(item => item != deleteObject);
+    let data = JSON.stringify(producers);
+    
+    fs.writeFileSync('database/producers.json', data);
+
+    res.sendStatus(204);
 });
