@@ -1,6 +1,7 @@
 <script>
 	import ProductsEdit from "./components/edit/Products_edit.svelte";
 import ProducersEdit from "./components/edit/Producers_edit.svelte";
+import SuppliersEdit from "./components/edit/Suppliers_edit.svelte";
 </script>
 
 <main>
@@ -48,7 +49,8 @@ import ProducersEdit from "./components/edit/Producers_edit.svelte";
 	</nav>
 	<!-- End Navbar -->
 	<ProductsEdit id={1} name={"Bananenbrot"} anzahl={3} herkunft={"Mond"} kategorie={"Sonstige"} verkaufspreis={"2,50€"} einkaufspreis={"1,00€"} bezugsquelle={"Bäckerei Bäcker"} mhd={"2021-10-01"} />
-	<ProducersEdit id={1} name={"Produzent Erhardt"} telefonnummer={"0160 93117188"} straße={"Bahnhofsstraße"} plz={"70567"} ort={"Stuttgart"} ></ProducersEdit>
+	<ProducersEdit id={1} name={"Produzent Erhardt"} telefonnummer={"0160 93117188"} straße={"Bahnhofsstraße"} plz={"70567"} ort={"Stuttgart"} />
+	<SuppliersEdit id={1} name={"Lieferant Laube"} telefonnummer={"06538 594562"} straße={"Baumweg 9"} plz={"70597"} ort={"Stuttgart"} />
 </main>
 
 <style>

@@ -1,9 +1,1 @@
-[
-  {
-    "name": "Dieters Bananenemporium",
-    "telnr": "0160 99557788",
-    "straße": "Straßenstraße 65",
-    "plz": "70597",
-    "ort": "Stuttgart"
-  }
-]
+[{"id":1,"name":"Lieferant Laube","telnr":"06538 594562","straße":"Baumweg 9","plz":"70597","ort":"Stuttgart"}]
