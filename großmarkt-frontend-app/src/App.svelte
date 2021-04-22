@@ -1,12 +1,12 @@
 <script>
 	import Example from "./components/Example.svelte"
+	import Product from "./components/list/Product.svelte";
+
 	export let name;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Example></Example>
+	<Product></Product>
 </main>
 
 <style>
