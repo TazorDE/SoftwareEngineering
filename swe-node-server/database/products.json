@@ -31,5 +31,38 @@
     "einkaufspreis": "0,29€",
     "mhd": "30-07-2022",
     "bezugsquelle": "Tomaten Tom"
+  },
+  {
+    "id": 44473,
+    "name": "Aubergine",
+    "anzahl": 23,
+    "herkunft": "Deutschland",
+    "kategorie": ["Gemüse"],
+    "verkaufspreis": "1,75€",
+    "einkaufspreis": "0,69€",
+    "mhd": "01-09-2021",
+    "bezugsquelle": "Beste Gemüse Export"
+  },
+  {
+    "id": 69436,
+    "name": "Knoblauch",
+    "anzahl": 654,
+    "herkunft": "Deutschland",
+    "kategorie": ["Gemüse"],
+    "verkaufspreis": "0,99€",
+    "einkaufspreis": "0,19€",
+    "mhd": "10-04-2022",
+    "bezugsquelle": "Vitale Heimat"
+  },
+  {
+    "id": 73294,
+    "name": "Wassermelone",
+    "anzahl": 83,
+    "herkunft": "Frankreich",
+    "kategorie": ["Obst"],
+    "verkaufspreis": "2,99€",
+    "einkaufspreis": "0,79€",
+    "mhd": "20-09-2021",
+    "bezugsquelle": "1001 Obst & Gemüse"
   }
 ]
