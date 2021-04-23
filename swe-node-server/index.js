@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({origin:'*'}))
 
 const fs = require('fs');
 
@@ -44,10 +46,11 @@ app.put('/api/v1/products', (req, res) => {
     let update_object;
     //find old item in array
     products.forEach(element => {
-        if(element.id = update_data.id){
+        if(element.id == update_data.id){
             update_object = element;
         }
     });
+
     //remove old item from array
     products = products.filter(item => item != update_object);
 
@@ -118,7 +121,7 @@ app.put('/api/v1/suppliers', (req, res) => {
     let update_object;
     //find old item in array
     suppliers.forEach(element => {
-        if(element.id = update_data.id){
+        if(element.id == update_data.id){
             update_object = element;
         }
     });
@@ -192,7 +195,7 @@ app.put('/api/v1/producers', (req, res) => {
     let update_object;
     //find old item in array
     producers.forEach(element => {
-        if(element.id = update_data.id){
+        if(element.id == update_data.id){
             update_object = element;
         }
     });

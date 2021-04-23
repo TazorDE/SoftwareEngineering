@@ -1,13 +1,24 @@
 [
   {
+    "id": 2,
+    "name": "Bananenbrot",
+    "anzahl": 3,
+    "herkunft": "Mond",
+    "kategorie": "Sonstige",
+    "verkaufspreis": "2,50€",
+    "einkaufspreis": "1,00€",
+    "mhd": "2021-10-01",
+    "bezugsquelle": "Bäckerei Bäcker"
+  },
+  {
     "id": 1,
-    "name": "Luft",
-    "anzahl": 1,
-    "herkunft": "deutschland",
-    "kategorie": [],
-    "verkaufspreis": "3€",
-    "einkauspreis": "0€",
-    "mhd": "12-08-2022",
-    "bezugsquelle": "Stuttgarter Luftwerke"
+    "name": "Erdbeeren",
+    "anzahl": "6",
+    "herkunft": "Spanien",
+    "kategorie": "Beerenobst",
+    "verkaufspreis": "2,50€",
+    "einkaufspreis": "1,00€",
+    "mhd": "2022-02-17",
+    "bezugsquelle": "Erdbeermaus"
   }
 ]
