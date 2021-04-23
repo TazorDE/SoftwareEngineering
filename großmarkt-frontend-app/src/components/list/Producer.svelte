@@ -124,10 +124,6 @@
         font-family: "Roboto";
     }
 
-    .table td {
-        text-align: left;
-    }
-
     main {
         text-align: left;
     }
