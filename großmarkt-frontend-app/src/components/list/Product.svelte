@@ -137,6 +137,10 @@
         cursor: pointer;
     }
 
+    main {
+        text-align: left;
+    }
+
     .bold-title {
         font-weight: bolder;
         color: #4e4e4e;
