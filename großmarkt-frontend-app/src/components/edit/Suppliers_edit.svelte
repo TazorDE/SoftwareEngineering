@@ -1,3 +1,13 @@
+<!-- 
+    This component is implemented as follows:
+   		
+        <SuppliersEdit 
+            id={1} name={"Lieferant Laube"} telefonnummer={"06538 594562"} 
+            straße={"Baumweg 9"} plz={"70597"} ort={"Stuttgart"} 
+        />
+
+    all parameters can be either fixed values or variables from the script section.
+ -->
 <script>
     export let id;
     export let name;

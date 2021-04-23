@@ -1,3 +1,13 @@
+<!-- 
+    This component is implemented as follows:
+    		
+            <ProducersEdit 
+                id={1} name={"Produzent Erhardt"} telefonnummer={"0160 93117188"} 
+                straße={"Bahnhofsstraße"} plz={"70567"} ort={"Stuttgart"} 
+            />
+            
+    all parameters can be either fixed values or variables from the script section.
+ -->
 <script>
     export let id;
     export let name;

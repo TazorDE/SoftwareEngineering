@@ -1,3 +1,13 @@
+<!-- 
+    This component is implemented as follows:
+    	
+        <ProductsEdit 
+            id={1} name={"Bananenbrot"} anzahl={3} herkunft={"Mond"} kategorie={"Sonstige"} 
+            verkaufspreis={"2,50€"} einkaufspreis={"1,00€"} bezugsquelle={"Bäckerei Bäcker"} mhd={"2021-10-01"} 
+        />
+        
+    all parameters can be either fixed values or variables from the script section.
+ -->
 <script>
     //set up props for use in the component
     export let id;
