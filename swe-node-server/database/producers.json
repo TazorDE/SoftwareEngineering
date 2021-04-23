@@ -1,9 +1,1 @@
-[
-    {
-        "name": "Schneckenmilchfarm Kern",
-        "telnr": "0160 88664455",
-        "straße": "Stuttgarter Haltestellenbahnhof 32",
-        "plz": "70567",
-        "ort": "Stuttgart"
-    }
-]
+[{"id":2,"name":"Schneckenmilchfarm Kern","telnr":"0160 88664455","straße":"Stuttgarter Haltestellenbahnhof 32","plz":"70567","ort":"Stuttgart"},{"id":1,"name":"Produzent Erhardt","telnr":"0160 93117188","straße":"Bahnhofsstraße","plz":"70567","ort":"Stuttgart"}]

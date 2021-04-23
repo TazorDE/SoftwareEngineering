@@ -64,5 +64,27 @@
     "einkaufspreis": "0,79€",
     "mhd": "20-09-2021",
     "bezugsquelle": "1001 Obstparadies"
+  },
+  {
+    "id": 2,
+    "name": "Bananenbrot",
+    "anzahl": 3,
+    "herkunft": "Mond",
+    "kategorie": "Sonstige",
+    "verkaufspreis": "2,50€",
+    "einkaufspreis": "1,00€",
+    "mhd": "2021-10-01",
+    "bezugsquelle": "Bäckerei Bäcker"
+  },
+  {
+    "id": 1,
+    "name": "Erdbeeren",
+    "anzahl": "6",
+    "herkunft": "Spanien",
+    "kategorie": "Beerenobst",
+    "verkaufspreis": "2,50€",
+    "einkaufspreis": "1,00€",
+    "mhd": "2022-02-17",
+    "bezugsquelle": "Erdbeermaus"
   }
 ]
