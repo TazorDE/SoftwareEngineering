@@ -32,7 +32,7 @@
             })
         }).then(res => {
             console.log(res);
-            document.getElementById(`alertbox${id}`).innerHTML = alert;
+            document.getElementById(`produceralertbox${id}`).innerHTML = alert;
         });
     }
 </script>
@@ -80,7 +80,7 @@
     </div>
 
     <!-- Error message -->
-    <div id="alertbox{id}"></div>
+    <div id="produceralertbox{id}"></div>
 </main>
 
 <style>

@@ -55,7 +55,7 @@
         }).then(res => {
             console.log(res);
             if(res.status != 200){
-                document.getElementById(`alertbox${id}`).innerHTML = alert;
+                document.getElementById(`productalertbox${id}`).innerHTML = alert;
             }
         });
     }
@@ -128,7 +128,7 @@
     </div>
 
     <!-- Error message -->
-    <div id="alertbox{id}"></div>
+    <div id="productalertbox{id}"></div>
 </main>
 
 <style>

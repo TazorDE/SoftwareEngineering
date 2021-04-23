@@ -33,7 +33,9 @@
             body: JSON.stringify(supplier_data)
         }).then(res => {
             console.log(res);
-            document.getElementById(`alertbox${id}`).innerHTML = alert;
+            if(res.status != 200){
+                document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
+            }
         });
     }
 
@@ -83,7 +85,7 @@
     </div>
 
     <!-- Error message -->
-    <div id="alertbox{id}"></div>
+    <div id="supplieralertbox{id}"></div>
 </main>
 
 <style>
