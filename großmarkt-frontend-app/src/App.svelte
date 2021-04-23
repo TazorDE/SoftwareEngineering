@@ -4,6 +4,7 @@
 	import SuppliersEdit from "./components/edit/Suppliers_edit.svelte";
 	import Product from "./components/list/Product.svelte";
 	import Producer from "./components/list/Producer.svelte";
+	import Supplier from "./components/list/Supplier.svelte";
 </script>
 
 <main>
@@ -51,7 +52,8 @@
 	</nav>
 	<!-- End Navbar -->
 <!--	<Product></Product>-->
-	<Producer></Producer>
+<!--	<Producer></Producer>-->
+	<Supplier></Supplier>
 </main>
 
 <style>
