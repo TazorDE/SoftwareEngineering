@@ -120,7 +120,7 @@
             </div>
         </div>
     </div>
-    <div id="addAlert"></div>
+    
 </main>
 
 <style>
