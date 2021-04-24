@@ -1,5 +1,8 @@
 <script>
 	import Example from "./components/Example.svelte"
+	import AddProduct from "./components/add/AddProduct.svelte";
+	import AddProducers from "./components/add/AddProducers.svelte";
+	import AddSuppliers from "./components/add/AddSuppliers.svelte";
 </script>
 
 <main>
@@ -46,7 +49,7 @@
 		</div>
 	</nav>
 	<!-- End Navbar -->
-	<Example></Example>
+	<AddProduct></AddProduct>
 </main>
 
 <style>
