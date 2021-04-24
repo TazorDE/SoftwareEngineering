@@ -1,5 +1,8 @@
 <script>
-	import Example from "./components/Example.svelte"
+	import Example from "./components/Example.svelte";
+	import Suppliers_delete from "./components/delete/Suppliers_delete.svelte";
+	import Producers_delete from "./components/delete/Producers_delete.svelte";
+	import Products_delete from "./components/delete/Products_delete.svelte";
 </script>
 
 <main>
@@ -46,7 +49,10 @@
 		</div>
 	</nav>
 	<!-- End Navbar -->
-	<Example></Example>
+	<Suppliers_delete></Suppliers_delete>
+	<Producers_delete></Producers_delete>
+	<Products_delete></Products_delete>
+
 </main>
 
 <style>

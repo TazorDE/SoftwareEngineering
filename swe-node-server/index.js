@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 app.use(express.json());
+const cors = require('cors');
+app.use(cors({origin:'*'}))
 
 const fs = require('fs');
 
@@ -44,10 +46,11 @@ app.put('/api/v1/products', (req, res) => {
     let update_object;
     //find old item in array
     products.forEach(element => {
-        if(element.id = update_data.id){
+        if(element.id == update_data.id){
             update_object = element;
         }
     });
+
     //remove old item from array
     products = products.filter(item => item != update_object);
 
@@ -58,6 +61,31 @@ app.put('/api/v1/products', (req, res) => {
     fs.writeFileSync('database/products.json', data)
 
     res.sendStatus(200)
+});
+
+//delete existing product - requires product id
+app.delete('/api/v1/products', (req, res)=> {
+    let deleteID = req.body.id;
+    let deleted = false;
+    let suppliers = JSON.parse(fs.readFileSync('./database/products.json'));
+    let deleteObject;
+    //find old item in array
+    suppliers.forEach(element => {
+        if(element.id === deleteID){
+            deleteObject = element;
+            deleted = true;
+        }
+    });
+    //Checks for deleted entry
+    if (!deleted){
+        throw "Entry could not be deleted";
+    }
+    suppliers = suppliers.filter(item => item != deleteObject);
+    let data = JSON.stringify(suppliers);
+
+    fs.writeFileSync('database/products.json', data);
+
+    res.sendStatus(204);
 });
 
 //Suppliers
@@ -96,7 +124,7 @@ app.put('/api/v1/suppliers', (req, res) => {
     let update_object;
     //find old item in array
     suppliers.forEach(element => {
-        if(element.id = update_data.id){
+        if(element.id == update_data.id){
             update_object = element;
         }
     });
@@ -110,6 +138,32 @@ app.put('/api/v1/suppliers', (req, res) => {
     fs.writeFileSync('database/suppliers.json', data)
 
     res.sendStatus(200)
+});
+
+//delete existing supplier - requires supplier id
+app.delete('/api/v1/suppliers', (req, res)=> {
+    let deleteID = req.body.id;
+    let deleted = false;
+    console.log("you've reached delete with ID ", deleteID)
+    let suppliers = JSON.parse(fs.readFileSync('./database/suppliers.json'));
+    let deleteObject;
+    //find old item in array
+    suppliers.forEach(element => {
+        if(element.id === deleteID){
+            deleteObject = element;
+            deleted = true;
+        }
+    });
+    //Checks for deleted entry
+    if (!deleted){
+        throw "Entry could not be deleted";
+    }
+    suppliers = suppliers.filter(item => item != deleteObject);
+    let data = JSON.stringify(suppliers);
+
+    fs.writeFileSync('database/suppliers.json', data);
+
+    res.sendStatus(204);
 });
 
 //Producers
@@ -148,7 +202,7 @@ app.put('/api/v1/producers', (req, res) => {
     let update_object;
     //find old item in array
     producers.forEach(element => {
-        if(element.id = update_data.id){
+        if(element.id == update_data.id){
             update_object = element;
         }
     });
@@ -162,4 +216,30 @@ app.put('/api/v1/producers', (req, res) => {
     fs.writeFileSync('database/producers.json', data)
 
     res.sendStatus(200)
+});
+
+//delete existing producer - requires producer id
+app.delete('/api/v1/producers', (req, res)=> {
+    let deleteID = req.body.id;
+    let deleted = false;
+    console.log("you've reached delete with ID ", deleteID)
+    let suppliers = JSON.parse(fs.readFileSync('./database/producers.json'));
+    let deleteObject;
+    //find old item in array
+    suppliers.forEach(element => {
+        if(element.id === deleteID){
+            deleteObject = element;
+            deleted = true;
+        }
+    });
+    //Checks for deleted entry
+    if (!deleted){
+        throw "Entry could not be deleted";
+    }
+    suppliers = suppliers.filter(item => item != deleteObject);
+    let data = JSON.stringify(suppliers);
+
+    fs.writeFileSync('database/producers.json', data);
+
+    res.sendStatus(204);
 });
