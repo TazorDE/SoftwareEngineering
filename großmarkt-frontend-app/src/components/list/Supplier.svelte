@@ -91,7 +91,7 @@
                 <option label="Telefon">Telefon</option>
             </select>
 
-            <input type="search" id="searchText" class="round-search search-input" data-table="filter-list"
+            <input type="search" id="searchText" class="round-search search-input" data-table="filter-list3"
                    name="searchText" placeholder="Lieferant suchen...">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke-width="3" fill="currentColor"
                  class="bi bi-search"
@@ -102,7 +102,7 @@
     </div>
     <button type="button" class="btn btn-primary add-supplier">Lieferant hinzufügen</button>
     <div class="supplier-list">
-        <table class="table table-hover filter-list">
+        <table class="table table-hover filter-list3">
             <thead>
             <tr>
                 <th scope="col">LieferantNr</th>

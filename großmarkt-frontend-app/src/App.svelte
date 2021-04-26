@@ -10,7 +10,6 @@
     let showProducers = false;
     let showSuppliers = false;
     let showClients = false;
-
 </script>
 
 <main>
@@ -93,7 +92,6 @@
     {#if showSuppliers}
         <Supplier/>
     {/if}
-
 </main>
 
 <style>

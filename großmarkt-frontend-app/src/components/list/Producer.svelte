@@ -44,19 +44,19 @@
      *
      */
     (function (document) {
-        'use strict';
-        const TableFilter = (function (myArray) {
-            let search_input;
+        // 'use strict';
+        const TableFilter2 = (function (myArray2) {
+            let search_input2;
 
-            function _onInputSearch(e) {
-                search_input = e.target;
-                const tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
-                myArray.forEach.call(tables, function (table) {
-                    myArray.forEach.call(table.tBodies, function (tbody) {
-                        myArray.forEach.call(tbody.rows, function (row) {
-                            const text_content = row.textContent.toLowerCase();
-                            const search_val = search_input.value.toLowerCase();
-                            row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
+            function _onInputSearch2(e) {
+                search_input2 = e.target;
+                const tables2 = document.getElementsByClassName(search_input2.getAttribute('data-table2'));
+                myArray2.forEach.call(tables2, function (table2) {
+                    myArray2.forEach.call(table2.tBodies, function (tbody2) {
+                        myArray2.forEach.call(tbody2.rows, function (row2) {
+                            const text_content2 = row2.textContent.toLowerCase();
+                            const search_val2 = search_input2.value.toLowerCase();
+                            row2.style.display = text_content2.indexOf(search_val2) > -1 ? '' : 'none';
                         });
                     });
                 });
@@ -64,9 +64,9 @@
 
             return {
                 init: function () {
-                    const inputs = document.getElementsByClassName('search-input');
-                    myArray.forEach.call(inputs, function (input) {
-                        input.oninput = _onInputSearch;
+                    const inputs2 = document.getElementsByClassName('search-input2');
+                    myArray2.forEach.call(inputs2, function (input2) {
+                        input2.oninput = _onInputSearch2;
                     });
                 }
             };
@@ -74,7 +74,7 @@
 
         document.addEventListener('readystatechange', function () {
             if (document.readyState === 'complete') {
-                TableFilter.init();
+                TableFilter2.init();
             }
         });
     })(document);
@@ -91,7 +91,7 @@
                 <option label="TelefonNr">Telefon</option>
             </select>
 
-            <input type="search" id="searchText" class="round-search search-input" data-table="filter-list"
+            <input type="search" id="searchText2" class="round-search search-input2" data-table2="filter-list2"
                    name="searchText" placeholder="Produzent suchen...">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" stroke-width="3" fill="currentColor"
                  class="bi bi-search"
@@ -102,7 +102,7 @@
     </div>
     <button type="button" class="btn btn-primary add-producer">Produzent hinzufügen</button>
     <div class="producer-list">
-        <table class="table table-hover filter-list">
+        <table class="table table-hover filter-list2">
             <thead>
             <tr>
                 <th scope="col">ProduzentNr</th>
