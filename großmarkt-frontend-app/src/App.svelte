@@ -1,15 +1,7 @@
 <script>
-    import ProductsEdit from "./components/edit/Products_edit.svelte";
-    import ProducersEdit from "./components/edit/Producers_edit.svelte";
-    import SuppliersEdit from "./components/edit/Suppliers_edit.svelte";
     import Product from "./components/list/Product.svelte";
     import Producer from "./components/list/Producer.svelte";
     import Supplier from "./components/list/Supplier.svelte";
-
-    let showProducts = true;
-    let showProducers = false;
-    let showSuppliers = false;
-    let showClients = false;
 </script>
 
 <main>
@@ -26,10 +18,14 @@
                 <li class="nav-item active">
                     <button type="button" class="btn btn-link navbar-button-link" id="nav-product" on:click={()=>
                     {
-                        showProducts = true;
-                        showProducers = false;
-                        showSuppliers = false;
-                        showClients = false;
+                        // showProducts = true;
+                        document.getElementById('showProduct').style.display = 'block';
+                        // showProducers = false;
+                        document.getElementById('showProducer').style.display = 'none';
+                        // showSuppliers = false;
+                        document.getElementById('showSupplier').style.display = 'none';
+                        // showClients = false;
+                        document.getElementById('showClient').style.display = 'none';
                     }}>
                         Produkte
                     </button>
@@ -37,10 +33,14 @@
                 <li class="nav-item">
                     <button type="button" class="btn btn-link navbar-button-link" id="nav-supplier" on:click={() =>
                     {
-                        showProducts = false;
-                        showProducers = false;
-                        showSuppliers = true;
-                        showClients = false;
+                        // showProducts = false;
+                        document.getElementById('showProduct').style.display = 'none';
+                        // showProducers = false;
+                        document.getElementById('showProducer').style.display = 'none';
+                        // showSuppliers = true;
+                        document.getElementById('showSupplier').style.display = 'block';
+                        // showClients = false;
+                        document.getElementById('showClient').style.display = 'none';
                     }}>
                         Lieferanten
                     </button>
@@ -48,10 +48,14 @@
                 <li class="nav-item">
                     <button type="button" class="btn btn-link navbar-button-link" id="nav-producer" on:click={() =>
                     {
-                        showProducts = false;
-                        showProducers = true;
-                        showSuppliers = false;
-                        showClients = false;
+                        // showProducts = false;
+                        document.getElementById('showProduct').style.display = 'none';
+                        // showProducers = true;
+                        document.getElementById('showProducer').style.display = 'block';
+                        // showSuppliers = false;
+                        document.getElementById('showSupplier').style.display = 'none';
+                        // showClients = false;
+                        document.getElementById('showClient').style.display = 'none';
                     }}>
                         Produzenten
                     </button>
@@ -59,10 +63,14 @@
                 <li class="nav-item">
                     <button type="button" class="btn btn-link navbar-button-link" id="nav-client" on:click={() =>
                     {
-                        showProducts = false;
-                        showProducers = false;
-                        showSuppliers = false;
-                        showClients = true;
+                        // showProducts = false;
+                        document.getElementById('showProduct').style.display = 'none';
+                        // showProducers = false;
+                        document.getElementById('showProduct').style.display = 'none';
+                        // showSuppliers = false;
+                        document.getElementById('showProduct').style.display = 'none';
+                        // showClients = true;
+                        document.getElementById('showClient').style.display = 'block';
                     }}>
                         Kunden
                     </button>
@@ -83,15 +91,24 @@
     </nav>
     <!-- End Navbar -->
 
-    {#if showProducts}
+    <!-- {#if showProducts} -->
+    <div id="showProduct">
         <Product/>
-    {/if}
-    {#if showProducers}
+    </div>
+    <!-- {/if} -->
+    <!-- {#if showProducers} -->
+    <div id="showProducer" style="display: none;">
         <Producer/>
-    {/if}
-    {#if showSuppliers}
+    </div>
+    <!-- {/if} -->
+    <!-- {#if showSuppliers} -->
+    <div id="showSupplier" style="display: none;">
         <Supplier/>
-    {/if}
+    </div>
+    <!-- {/if} -->
+    <div id="showClient" style="display: none;">
+        <!-- placeholder for clients -->
+    </div>
 </main>
 
 <style>
