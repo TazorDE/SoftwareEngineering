@@ -92,7 +92,7 @@
                 <option label="Kategorie">Kategorie</option>
                 <option label="Verkaufspreis">Verkaufspreis</option>
                 <option label="Einkaufspreis">Einkaufspreis</option>
-                <option label="Einkaufspreis">Mindesthaltbarkeitsdatum</option>
+                <option label="Mindesthaltbarkeitsdatum">Mindesthaltbarkeitsdatum</option>
                 <option label="Bezugsquelle">Bezugsquelle</option>
             </select>
 
