@@ -5,6 +5,12 @@
     import Product from "./components/list/Product.svelte";
     import Producer from "./components/list/Producer.svelte";
     import Supplier from "./components/list/Supplier.svelte";
+
+    let showProducts = true;
+    let showProducers = false;
+    let showSuppliers = false;
+    let showClients = false;
+
 </script>
 
 <main>
@@ -19,22 +25,46 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <button type="button" class="btn btn-link navbar-button-link" id="nav-product">
+                    <button type="button" class="btn btn-link navbar-button-link" id="nav-product" on:click={()=>
+                    {
+                        showProducts = true;
+                        showProducers = false;
+                        showSuppliers = false;
+                        showClients = false;
+                    }}>
                         Produkte
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-link navbar-button-link" id="nav-supplier">
+                    <button type="button" class="btn btn-link navbar-button-link" id="nav-supplier" on:click={() =>
+                    {
+                        showProducts = false;
+                        showProducers = false;
+                        showSuppliers = true;
+                        showClients = false;
+                    }}>
                         Lieferanten
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-link navbar-button-link" id="nav-producer">
+                    <button type="button" class="btn btn-link navbar-button-link" id="nav-producer" on:click={() =>
+                    {
+                        showProducts = false;
+                        showProducers = true;
+                        showSuppliers = false;
+                        showClients = false;
+                    }}>
                         Produzenten
                     </button>
                 </li>
                 <li class="nav-item">
-                    <button type="button" class="btn btn-link navbar-button-link" id="nav-client">
+                    <button type="button" class="btn btn-link navbar-button-link" id="nav-client" on:click={() =>
+                    {
+                        showProducts = false;
+                        showProducers = false;
+                        showSuppliers = false;
+                        showClients = true;
+                    }}>
                         Kunden
                     </button>
                 </li>
@@ -53,9 +83,17 @@
         </div>
     </nav>
     <!-- End Navbar -->
-    <Product></Product>
-    <!--	<Producer></Producer>-->
-    <!--	<Supplier></Supplier>-->
+
+    {#if showProducts}
+        <Product/>
+    {/if}
+    {#if showProducers}
+        <Producer/>
+    {/if}
+    {#if showSuppliers}
+        <Supplier/>
+    {/if}
+
 </main>
 
 <style>
