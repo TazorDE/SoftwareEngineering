@@ -108,7 +108,7 @@ import AddProduct from "../add/AddProduct.svelte";
         </div>
     </div>
 
-    <button type="button" class="btn btn-primary add-product">Produkt hinzufügen</button>
+<!--    <button type="button" class="btn btn-primary add-product">Produkt hinzufügen</button>-->
     <!-- <div class="add-product"> -->
         <AddProduct />
     <!-- </div> -->

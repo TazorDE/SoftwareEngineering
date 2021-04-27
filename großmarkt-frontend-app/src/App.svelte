@@ -136,6 +136,7 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+        outline: none;
     }
 
     #nav-producer:hover, #nav-producer:focus, #nav-producer:active {
@@ -151,6 +152,7 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
         user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+        outline: none;
     }
 
     #nav-supplier:hover, #nav-supplier:focus, #nav-supplier:active {
@@ -159,6 +161,13 @@
         border-bottom: 4px solid #fdc824;
         border-radius: 0;
         box-shadow: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
         outline: none;
     }
 
@@ -168,6 +177,13 @@
         border-bottom: 4px solid #cb99c9;
         border-radius: 0;
         box-shadow: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
         outline: none;
     }
 

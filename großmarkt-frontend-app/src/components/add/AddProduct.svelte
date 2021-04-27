@@ -61,16 +61,12 @@
         inputMhd.value = '';
         inputBezugsquelle.value = '';
     }
-
-
-
-
 </script>
 
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary" id="buttonToggle"data-toggle="modal" data-target="#exampleModalCenter">Produkt hinzufügen
+    <button type="button" class="btn btn-secondary add-product" id="buttonToggle"data-toggle="modal" data-target="#exampleModalCenter">Produkt hinzufügen
     </button>
 
     <!-- Modal -->
@@ -175,6 +171,27 @@
 </main>
 
 <style>
+    .add-product {
+        float: right;
+        margin-right: 35px;
+        margin-text-outline: 0;
+        margin-bottom: 10px;
+        background: #aefda7;
+        color: #4e4e4e;
+        font-weight: 800;
+        font-size: larger;
+        border-width: 0;
+        border-radius: 0;
+    }
+
+    .add-product:hover {
+        background: #63b269;
+    }
+
+    .add-product:active, .add-product:visited, .add-product:focus {
+        background-color: #aefda7;
+        border-width: 0;
+    }
     .boxesBeside {
         float: left;
         width: 50.00%;
