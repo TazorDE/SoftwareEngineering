@@ -10,10 +10,10 @@
     let inputTelefonnummer;
     let newTelefonnummer = '';
     let inputPreisliste;
-    let newPreisliste ='';
+    let newPreisliste = '';
 
 
-    let url="http://localhost:3000/api/v1/suppliers";
+    let url = "http://localhost:3000/api/v1/suppliers";
     let method = "POST"
 
     function add_To_DB() {
@@ -37,11 +37,11 @@
                 "ort": newOrt
             })
         }).then(res => {
-                console.log(res);
-                if(res.status != 200){
-                    document.getElementById('addAlert').innerHTML = alert;
-                }
-            });
+            console.log(res);
+            if (res.status !== 200) {
+                document.getElementById('addAlert').innerHTML = alert;
+            }
+        });
 
         console.log(product_data);
         inputName.value = '';
@@ -52,7 +52,7 @@
         inputPreisliste.value = '';
     }
 
-    function resetData(){
+    function resetData() {
         inputName.value = '';
         inputStraße.value = '';
         inputPLZ.value = '';
@@ -61,15 +61,13 @@
         inputPreisliste.value = '';
     }
 
-
-
-
 </script>
 
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary" id="buttonToggle"data-toggle="modal" data-target="#exampleModalCenter">Lieferant hinzufügen
+    <button type="button" class="btn btn-primary" id="buttonToggle" data-toggle="modal"
+            data-target="#exampleModalCenter">Lieferant hinzufügen
     </button>
 
     <!-- Modal -->
@@ -100,10 +98,9 @@
                                    bind:this={inputPLZ} bind:value="{newPLZ}">
                         </div>
 
-
-                        <button type="button" class="btn btn-secondary btn-block" id="buttonLeft" data-dismiss="modal" on:click={resetData()}>Abbrechen</button>
-
-
+                        <button type="button" class="btn btn-secondary btn-block" id="buttonLeft" data-dismiss="modal"
+                                on:click={resetData()}>Abbrechen
+                        </button>
                     </div>
                     <div class="boxesBeside" id="boxRight">
 
@@ -120,19 +117,17 @@
                                    bind:this={inputPreisliste} bind:value="{newPreisliste}">
                         </div>
 
-
-                        <button type="button" class="btn btn-secondary btn-block" id="buttonRight" data-dismiss="modal" on:click={add_To_DB}>Lieferant hinzufügen</button>
-
+                        <button type="button" class="btn btn-secondary btn-block" id="buttonRight" data-dismiss="modal"
+                                on:click={add_To_DB}>Lieferant hinzufügen
+                        </button>
                     </div>
-
                 </div>
                 <div class="modal-footer">
-
                 </div>
             </div>
         </div>
     </div>
-    
+
 </main>
 
 <style>
@@ -142,10 +137,11 @@
         box-sizing: border-box;
     }
 
-    #boxLeft{
+    #boxLeft {
         padding: 0px 10px 0px 100px;
     }
-    #boxRight{
+
+    #boxRight {
         padding: 0px 100px 0px 10px;
     }
 
@@ -156,6 +152,7 @@
     #exampleModalLongTitle {
         color: white;
     }
+
     .modal-header {
         border-bottom: 0 none;
     }
@@ -164,25 +161,29 @@
         border-top: 0 none;
     }
 
-    #buttonLeft{
+    #buttonLeft {
         color: white;
         background-color: #c82333;
         border-color: #c82333;
     }
-    #buttonLeft:hover{
+
+    #buttonLeft:hover {
         color: black;
         background-color: white;
     }
-    #buttonRight{
+
+    #buttonRight {
         color: #4e4e4e;
         background-color: #ffc825;
         border-color: #ffc825;
     }
-    #buttonRight:hover{
-        color:black;
+
+    #buttonRight:hover {
+        color: black;
         background-color: white;
     }
-    #buttonToggle{
+
+    #buttonToggle {
         color: black;
         background-color: #ffc825;
         border-color: #ffc825;

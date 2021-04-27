@@ -48,8 +48,7 @@
         }).then(res => res.json())
             .then(products =>{
                 console.log('Success:', products);
-            })
-           ;
+            });
 
         console.log(product);
         inputProdukt.value = '';
@@ -70,7 +69,7 @@
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary button-add-product" id="buttonToggle"data-toggle="modal" data-target="#exampleModalCenter">Produkt hinzufügen
+    <button type="button" class="btn btn-primary button-add-product" id="buttonToggle" data-toggle="modal" data-target="#exampleModalCenter">Produkt hinzufügen
     </button>
 
     <!-- Modal -->
@@ -86,7 +85,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="boxesBeside" id="boxLeft">
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-3">
                             <input type="text" class="form-control" id="produktname" placeholder="Produktname"
                                    aria-label="Produktname"
                                    aria-describedby="basic-addon1" bind:this={inputProdukt} bind:value="{newProduktname}">
@@ -196,15 +195,16 @@
         border-width: 0;
     }
     .boxesBeside {
-        float: right;
+        float: left;
         width: 50.00%;
         box-sizing: border-box;
     }
+
     #boxLeft{
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0px 10px 0px 100px;
     }
     #boxRight{
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0px 100px 0px 10px;
     }
 
     .modal-content {
