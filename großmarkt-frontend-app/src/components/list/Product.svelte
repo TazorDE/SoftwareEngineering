@@ -124,11 +124,7 @@ import ProductsEdit from "../edit/Products_edit.svelte";
         </div>
     </div>
 
-    <!-- <button type="button" class="btn btn-primary add-product">Produkt hinzufügen</button> -->
-    <div class="add-product">
-        <AddProduct class="add-product-component"/>
-    </div>
-
+    <AddProduct />
 
     <div class="product-list">
         <table class="table table-hover filter-list">
