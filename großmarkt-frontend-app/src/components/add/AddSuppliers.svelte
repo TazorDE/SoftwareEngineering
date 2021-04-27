@@ -1,28 +1,28 @@
 <script>
-    let inputName;
-    let newName = '';
-    let inputStraße;
-    let newStraße = '';
-    let inputPLZ;
-    let newPLZ = '';
-    let inputOrt;
-    let newOrt = '';
-    let inputTelefonnummer;
-    let newTelefonnummer = '';
-    let inputPreisliste;
-    let newPreisliste = '';
+    let supplier_inputName;
+    let supplier_newName = '';
+    let supplier_inputStraße;
+    let supplier_newStraße = '';
+    let supplier_inputPLZ;
+    let supplier_newPLZ = '';
+    let supplier_inputOrt;
+    let supplier_newOrt = '';
+    let supplier_inputTelefonnummer;
+    let supplier_newTelefonnummer = '';
+    let supplier_inputPreisliste;
+    let supplier_newPreisliste ='';
 
 
-    let url = "http://localhost:3000/api/v1/suppliers";
+    let url="http://localhost:3000/api/v1/suppliers";
     let method = "POST"
 
-    function add_To_DB() {
+    function suppliers_add_To_DB() {
         let product_data = {
-            "name": newName,
-            "telnr": newTelefonnummer,
-            "straße": newStraße,
-            "plz": newPLZ,
-            "ort": newOrt
+            "name": supplier_newName,
+            "telnr": supplier_newTelefonnummer,
+            "straße": supplier_newStraße,
+            "plz": supplier_newPLZ,
+            "ort": supplier_newOrt
         }
         fetch(url, {
             method: method,
@@ -30,118 +30,136 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                "name": newName,
-                "telnr": newTelefonnummer,
-                "straße": newStraße,
-                "plz": newPLZ,
-                "ort": newOrt
+                "name": supplier_newName,
+                "telnr": supplier_newTelefonnummer,
+                "straße": supplier_newStraße,
+                "plz": supplier_newPLZ,
+                "ort": supplier_newOrt
             })
-        }).then(res => {
-            console.log(res);
-            if (res.status !== 200) {
-                document.getElementById('addAlert').innerHTML = alert;
+        }).then(res=>{
+            if(res.status == 200){
+                location.reload();
             }
-        });
-
-        console.log(product_data);
-        inputName.value = '';
-        inputStraße.value = '';
-        inputPLZ.value = '';
-        inputOrt.value = '';
-        inputTelefonnummer.value = '';
-        inputPreisliste.value = '';
+        })
     }
 
-    function resetData() {
-        inputName.value = '';
-        inputStraße.value = '';
-        inputPLZ.value = '';
-        inputOrt.value = '';
-        inputTelefonnummer.value = '';
-        inputPreisliste.value = '';
-    }
+    // function resetData(){
+    //     supplier_inputName.value = '';
+    //     supplier_inputStraße.value = '';
+    //     supplier_inputPLZ.value = '';
+    //     supplier_inputOrt.value = '';
+    //     supplier_inputTelefonnummer.value = '';
+    //     supplier_inputPreisliste.value = '';
+    // }
+
+
+
 
 </script>
 
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-primary" id="buttonToggle" data-toggle="modal"
-            data-target="#exampleModalCenter">Lieferant hinzufügen
+    <button type="button" class="btn btn-secondary add-supplier" id="suppliers_buttonToggle"data-toggle="modal" data-target="#suppliers_exampleModalCenter">Lieferant hinzufügen
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="suppliers_exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="suppliers_exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h5 class="modal-title w-100" id="exampleModalLongTitle">Lieferant hinzufügen</h5>
+                    <h5 class="modal-title w-100" id="suppliers_exampleModalLongTitle">Lieferant hinzufügen</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <div class="boxesBeside" id="boxLeft">
+                    <div class="suppliers_boxesBeside" id="suppliers_boxLeft">
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="lieferantenName" placeholder="Name"
+                            <input type="text" class="form-control" id="suppliers_lieferantenName" placeholder="Name"
                                    aria-label="Lieferantentenname"
-                                   aria-describedby="basic-addon1" bind:this={inputName} bind:value="{newName}">
+                                   aria-describedby="suppliers_basic-addon1" bind:this={supplier_inputName} bind:value="{supplier_newName}">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="strasse" placeholder="Straße"
-                                   bind:this={inputStraße} bind:value="{newStraße}">
+                            <input type="text" class="form-control" id="suppliers_strasse" placeholder="Straße"
+                                   bind:this={supplier_inputStraße} bind:value="{supplier_newStraße}">
                         </div>
 
                         <div class="input-group mb-3">
-                            <input type="number" class="form-control" id="plz" placeholder="PLZ"
-                                   bind:this={inputPLZ} bind:value="{newPLZ}">
+                            <input type="number" class="form-control" id="suppliers_plz" placeholder="PLZ"
+                                   bind:this={supplier_inputPLZ} bind:value="{supplier_newPLZ}">
                         </div>
 
-                        <button type="button" class="btn btn-secondary btn-block" id="buttonLeft" data-dismiss="modal"
-                                on:click={resetData()}>Abbrechen
-                        </button>
+<!-- on:click={resetData()} -->
+                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonLeft" data-dismiss="modal" >Abbrechen</button>
+
+
                     </div>
-                    <div class="boxesBeside" id="boxRight">
+                    <div class="suppliers_boxesBeside" id="suppliers_boxRight">
 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="ort" placeholder="Ort"
-                                   bind:this={inputOrt} bind:value="{newOrt}">
+                            <input type="text" class="form-control" id="suppliers_ort" placeholder="Ort"
+                                   bind:this={supplier_inputOrt} bind:value="{supplier_newOrt}">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="telefon" placeholder="Telefonnummer"
-                                   bind:this={inputTelefonnummer} bind:value="{newTelefonnummer}">
+                            <input type="text" class="form-control" id="suppliers_telefon" placeholder="Telefonnummer"
+                                   bind:this={supplier_inputTelefonnummer} bind:value="{supplier_newTelefonnummer}">
                         </div>
                         <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="preisliste" placeholder="Preisliste"
-                                   bind:this={inputPreisliste} bind:value="{newPreisliste}">
+                            <input type="file" class="form-control" id="suppliers_preisliste" placeholder="Preisliste"
+                                   bind:this={supplier_inputPreisliste} bind:value="{supplier_newPreisliste}">
                         </div>
 
-                        <button type="button" class="btn btn-secondary btn-block" id="buttonRight" data-dismiss="modal"
-                                on:click={add_To_DB}>Lieferant hinzufügen
-                        </button>
+
+                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonRight" data-dismiss="modal" on:click={suppliers_add_To_DB}>Lieferant hinzufügen</button>
+
                     </div>
+
                 </div>
                 <div class="modal-footer">
+
                 </div>
             </div>
         </div>
     </div>
-
+    
 </main>
 
 <style>
-    .boxesBeside {
+    .add-supplier {
+        float: right;
+        margin-right: 35px;
+        margin-text-outline: 0;
+        margin-bottom: 10px;
+        background: #fdc824;
+        color: #4e4e4e;
+        font-weight: 800;
+        font-size: larger;
+        border-width: 0;
+        border-radius: 0;
+    }
+
+    .add-supplier:hover {
+        background: #fdac00;
+    }
+
+    .add-supplier:active, .add-supplier:visited, .add-supplier:focus {
+        background-color: #fdc824;
+        border-width: 0;
+    }
+
+
+    .suppliers_boxesBeside {
         float: left;
         width: 50.00%;
         box-sizing: border-box;
     }
 
-    #boxLeft {
+    #suppliers_boxLeft{
         padding: 0px 10px 0px 100px;
     }
-
-    #boxRight {
+    #suppliers_boxRight{
         padding: 0px 100px 0px 10px;
     }
 
@@ -149,10 +167,9 @@
         background: #4e4e4e;
     }
 
-    #exampleModalLongTitle {
+    #suppliers_exampleModalLongTitle {
         color: white;
     }
-
     .modal-header {
         border-bottom: 0 none;
     }
@@ -161,32 +178,24 @@
         border-top: 0 none;
     }
 
-    #buttonLeft {
+    #suppliers_buttonLeft{
         color: white;
         background-color: #c82333;
         border-color: #c82333;
     }
-
-    #buttonLeft:hover {
+    #suppliers_buttonLeft:hover{
         color: black;
         background-color: white;
     }
-
-    #buttonRight {
+    #suppliers_buttonRight{
         color: #4e4e4e;
         background-color: #ffc825;
         border-color: #ffc825;
     }
-
-    #buttonRight:hover {
-        color: black;
+    #suppliers_buttonRight:hover{
+        color:black;
         background-color: white;
     }
 
-    #buttonToggle {
-        color: black;
-        background-color: #ffc825;
-        border-color: #ffc825;
-    }
 
 </style>
