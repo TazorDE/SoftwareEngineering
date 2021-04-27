@@ -1,8 +1,17 @@
 [
   {
-    "name": "Dieters Bananenemporium",
-    "telnr": "0160 99557788",
-    "straße": "Straßenstraße 65",
+    "id": 2,
+    "name": "Lieferant Laube",
+    "telnr": "06538 594562",
+    "straße": "Baumweg 9",
+    "plz": "70597",
+    "ort": "Stuttgart"
+  },
+  {
+    "id": 1,
+    "name": "Moveit GmbH",
+    "telnr": "06538 594562",
+    "straße": "Lieferstraße 1",
     "plz": "70597",
     "ort": "Stuttgart"
   }

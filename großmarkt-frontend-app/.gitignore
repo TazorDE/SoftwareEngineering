@@ -2,3 +2,4 @@
 /public/build/
 
 .DS_Store
+/public/vendor/bootstrap/css/bootstrap.min.css
