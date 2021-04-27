@@ -141,6 +141,7 @@ app.put('/api/v1/suppliers', (req, res) => {
 });
 
 //delete existing supplier - requires supplier id
+
 app.delete('/api/v1/suppliers', (req, res)=> {
     let deleteID = req.body.id;
     let deleted = false;
@@ -160,6 +161,7 @@ app.delete('/api/v1/suppliers', (req, res)=> {
     }
     suppliers = suppliers.filter(item => item != deleteObject);
     let data = JSON.stringify(suppliers);
+
 
     fs.writeFileSync('database/suppliers.json', data);
 
@@ -238,6 +240,7 @@ app.delete('/api/v1/producers', (req, res)=> {
     }
     suppliers = suppliers.filter(item => item != deleteObject);
     let data = JSON.stringify(suppliers);
+
 
     fs.writeFileSync('database/producers.json', data);
 
