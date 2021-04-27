@@ -120,34 +120,55 @@
         color: #ffffff;
         font-weight: 600;
         margin-right: 25px;
+        outline: none;
     }
 
-    #nav-product:hover {
+    #nav-product:hover, #nav-product:focus, #nav-product:active {
         color: #ffffff;
         text-decoration: none;
         border-bottom: 4px solid #aefda7;
         border-radius: 0;
+        box-shadow: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
     }
 
-    #nav-producer:hover {
+    #nav-producer:hover, #nav-producer:focus, #nav-producer:active {
         color: #ffffff;
         text-decoration: none;
         border-bottom: 4px solid #fd7e14;
         border-radius: 0;
+        box-shadow: none;
+        -webkit-touch-callout: none; /* iOS Safari */
+        -webkit-user-select: none; /* Safari */
+        -khtml-user-select: none; /* Konqueror HTML */
+        -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
     }
 
-    #nav-supplier:hover {
+    #nav-supplier:hover, #nav-supplier:focus, #nav-supplier:active {
         color: #ffffff;
         text-decoration: none;
         border-bottom: 4px solid #fdc824;
         border-radius: 0;
+        box-shadow: none;
+        outline: none;
     }
 
-    #nav-client:hover {
+    #nav-client:hover, #nav-client:focus, #nav-client:active {
         color: #ffffff;
         text-decoration: none;
         border-bottom: 4px solid #cb99c9;
         border-radius: 0;
+        box-shadow: none;
+        outline: none;
     }
 
     #nav-bill {
@@ -158,6 +179,7 @@
         margin-right: 40px;
         padding-left: 20px;
         padding-right: 20px;
+        outline: none;
     }
 
     #nav-bill:hover {
