@@ -56,7 +56,7 @@
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary product_button-add-product" id="product_buttonToggle"data-toggle="modal" data-target="#product_exampleModalCenter">Produkt hinzufügen
+    <button type="button" class="btn btn-secondary product_button-add-product" data-toggle="modal" data-target="#product_exampleModalCenter">Produkt hinzufügen
     </button>
 
     <!-- Modal -->
@@ -72,7 +72,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="product_boxesBeside" id="product_boxLeft">
-                        <div class="input-group mb-2">
+                        <div class="input-group mb-3">
                             <input type="text" class="form-control" id="product_produktname" placeholder="Produktname"
                                    aria-label="Produktname"
                                    aria-describedby="basic-addon1" bind:this={produkt_inputProdukt} bind:value="{produkt_newProduktname}">
@@ -182,15 +182,15 @@
         border-width: 0;
     }
     .product_boxesBeside {
-        float: right;
-        width: 50.00%;
+        float: left;
+        width: 50%;
         box-sizing: border-box;
     }
     #product_boxLeft{
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0 10px 0 100px;
     }
     #product_boxRight{
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0 100px 0 10px;
     }
 
     .modal-content {
@@ -208,7 +208,7 @@
         border-top: 0 none;
     }
     #test{
-        padding: 0px 0px 6% 0px;
+        padding: 0 0 6% 0;
     }
     #product_buttonLeft{
         color: white;
@@ -228,10 +228,4 @@
         color:black;
         background-color: white;
     }
-    #product_buttonToggle{
-        color: black;
-        background-color: #afffa8;
-        border-color: #afffa8;
-    }
-
 </style>
