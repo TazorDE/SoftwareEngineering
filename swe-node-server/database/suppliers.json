@@ -1,18 +1,1 @@
-[
-  {
-    "id": 2,
-    "name": "Lieferant Laube",
-    "telnr": "06538 594562",
-    "straße": "Baumweg 9",
-    "plz": "70597",
-    "ort": "Stuttgart"
-  },
-  {
-    "id": 1,
-    "name": "Moveit GmbH",
-    "telnr": "06538 594562",
-    "straße": "Lieferstraße 1",
-    "plz": "70597",
-    "ort": "Stuttgart"
-  }
-]
+[{"id":2,"name":"Lieferant Laube","telnr":"06538 594562","straße":"Baumweg 9","plz":"70597","ort":"Stuttgart"},{"id":1,"name":"Moveit GmbH","telnr":"06538 594562","straße":"Lieferstraße 1","plz":"70597","ort":"Stuttgart"},{"name":"Ventilatorlieferdienst","telnr":"0160 96554488","straße":"Baumstraße 23","plz":70597,"ort":"Stuttgart","id":3},{"name":"Nuss Manufaktur","telnr":"555 66332211","straße":"Nussweg 9","plz":70567,"ort":"Stuttgart","id":4}]

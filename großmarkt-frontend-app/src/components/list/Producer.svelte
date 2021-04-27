@@ -1,4 +1,5 @@
 <script>
+import AddProducers from "../add/AddProducers.svelte";
 import ProducersEdit from "../edit/Producers_edit.svelte";
 
     /**
@@ -113,7 +114,10 @@ import ProducersEdit from "../edit/Producers_edit.svelte";
             </svg>
         </div>
     </div>
-    <button type="button" class="btn btn-primary add-producer">Produzent hinzufügen</button>
+
+    <!-- <button type="button" class="btn btn-primary add-producer">Produzent hinzufügen</button> -->
+    <AddProducers />
+
     <div class="producer-list">
         <table class="table table-hover filter-list2">
             <thead>

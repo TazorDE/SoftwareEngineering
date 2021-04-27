@@ -1,5 +1,6 @@
 <script>
-    import SuppliersEdit from '../edit/Suppliers_edit.svelte';
+    import AddSuppliers from '../add/AddSuppliers.svelte';
+import SuppliersEdit from '../edit/Suppliers_edit.svelte';
     /**
      * This function fetches the suppliers.json file and populates the table according
      * to the table headers
@@ -33,7 +34,7 @@
                         '<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>' +
                         '</svg></td>';
                 })
-                document.getElementById('suppliers').innerHTML = temp;
+                document.getElementById('suppliers_list_element').innerHTML = temp;
                 suppliers.forEach((supplier)=>{
                     const edit = new SuppliersEdit({
                         target: document.getElementById(`supplier${supplier.id}`),
@@ -112,7 +113,10 @@
             </svg>
         </div>
     </div>
-    <button type="button" class="btn btn-primary add-supplier">Lieferant hinzufügen</button>
+
+    <!-- <button type="button" class="btn btn-primary add-supplier">Lieferant hinzufügen</button> -->
+    <AddSuppliers />
+
     <div class="supplier-list">
         <table class="table table-hover filter-list3">
             <thead>
@@ -125,13 +129,17 @@
                 <th scope="col"></th>
             </tr>
             </thead>
-            <tbody id="suppliers">
+            <tbody id="suppliers_list_element">
             </tbody>
         </table>
     </div>
 </main>
 
 <style>
+    .btn-primary:focus, .btn:focus {
+        border-width: 0;
+        box-shadow: none;
+    }
     * {
         font-family: "Roboto";
     }
@@ -163,32 +171,7 @@
         flex: auto;
     }
 
-    .add-supplier {
-        float: right;
-        margin-right: 35px;
-        margin-text-outline: 0;
-        margin-bottom: 10px;
-        background: #fdc824;
-        color: #4e4e4e;
-        font-weight: 800;
-        font-size: larger;
-        border-width: 0;
-        border-radius: 0;
-    }
-
-    .add-supplier:hover {
-        background: #fdac00;
-    }
-
-    .add-supplier:active, .add-supplier:visited, .add-supplier:focus {
-        background-color: #fdc824;
-        border-width: 0;
-    }
-
-    .btn-primary:focus, .btn:focus {
-        border-width: 0;
-        box-shadow: none;
-    }
+    
 
     .round-search {
         background: #dadada;
