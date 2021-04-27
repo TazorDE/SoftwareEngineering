@@ -70,7 +70,7 @@
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary" id="buttonToggle"data-toggle="modal" data-target="#exampleModalCenter">Produkt hinzufügen
+    <button type="button" class="btn btn-secondary button-add-product" id="buttonToggle"data-toggle="modal" data-target="#exampleModalCenter">Produkt hinzufügen
     </button>
 
     <!-- Modal -->
@@ -86,7 +86,7 @@
                 </div>
                 <div class="modal-body">
                     <div class="boxesBeside" id="boxLeft">
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-2">
                             <input type="text" class="form-control" id="produktname" placeholder="Produktname"
                                    aria-label="Produktname"
                                    aria-describedby="basic-addon1" bind:this={inputProdukt} bind:value="{newProduktname}">
@@ -175,17 +175,36 @@
 </main>
 
 <style>
+
+    .button-add-product{
+        float: right;
+        margin-right: 35px;
+        margin-text-outline: 0;
+        margin-bottom: 10px;
+        background: #aefda7;
+        color: #4e4e4e;
+        font-weight: 800;
+        font-size: larger;
+        border-width: 0;
+        border-radius: 0;    
+    }
+    .button-add-product:hover {
+        background: #63b269;
+    }
+    .button-add-product:active, .button-add-product:visited, .button-add-product:focus {
+        background-color: #aefda7;
+        border-width: 0;
+    }
     .boxesBeside {
-        float: left;
+        float: right;
         width: 50.00%;
         box-sizing: border-box;
     }
-
     #boxLeft{
-        padding: 0px 10px 0px 100px;
+        padding: 0rem 1rem 0rem 1rem;
     }
     #boxRight{
-        padding: 0px 100px 0px 10px;
+        padding: 0rem 1rem 0rem 1rem;
     }
 
     .modal-content {
