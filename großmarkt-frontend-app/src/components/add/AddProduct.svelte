@@ -100,6 +100,7 @@
                                 <label class="input-group-text" for="inputGroupSelect01">Herkunft</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect01" bind:this={inputHerkunft} bind:value="{newHerkunft}">
+                                <option value="" selected>-- Herkunft --</option>
                                 <option>Mond</option>
                                 <option>Deutschland</option>
                                 <option>Spanien</option>
@@ -112,6 +113,7 @@
                                 <label class="input-group-text" for="inputGroupSelect02">Kategorie</label>
                             </div>
                             <select class="custom-select" id="inputGroupSelect02" bind:this={inputKategorie} bind:value="{newKategorie}">
+                                <option value="" selected>-- Kategorie --</option>
                                 <option>Kernobst</option>
                                 <option>Steinobst</option>
                                 <option>Beerenobst</option>

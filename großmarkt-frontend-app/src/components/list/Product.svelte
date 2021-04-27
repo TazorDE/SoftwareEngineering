@@ -1,4 +1,6 @@
 <script>
+import AddProduct from "../add/AddProduct.svelte";
+
     /**
      * This function fetches the products.json file and populates the table according
      * to the table headers
@@ -105,7 +107,12 @@
             </svg>
         </div>
     </div>
+
     <button type="button" class="btn btn-primary add-product">Produkt hinzufügen</button>
+    <!-- <div class="add-product"> -->
+        <AddProduct />
+    <!-- </div> -->
+
     <div class="product-list">
         <table class="table table-hover filter-list">
             <thead>
