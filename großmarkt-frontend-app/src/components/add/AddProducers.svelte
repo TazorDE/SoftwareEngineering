@@ -10,10 +10,10 @@
     let inputTelefonnummer;
     let newTelefonnummer = '';
     let inputPreisliste;
-    let newPreisliste ='';
+    let newPreisliste = '';
 
 
-    let url="http://localhost:3000/api/v1/producers";
+    let url = "http://localhost:3000/api/v1/producers";
 
 
     function producer_add_To_Database() {
@@ -32,14 +32,12 @@
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(producer),
-        }).then(res=>{
-            if(res.status == 200){
+        }).then(res => {
+            if (res.status == 200) {
                 location.reload();
             }
         })
     }
-
-
 
 
 </script>
@@ -47,7 +45,8 @@
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary add-producer" id="producer_buttonToggle" data-toggle="modal" data-target="#producer_exampleModalCenter">
+    <button type="button" class="btn btn-secondary add-producer" data-toggle="modal"
+            data-target="#producer_exampleModalCenter">
         Produzent hinzufügen
     </button>
 
@@ -81,7 +80,9 @@
                         </div>
 
 
-                        <button type="button" class="btn btn-secondary btn-block" id="producer_buttonLeft" data-dismiss="modal">Abbrechen</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="producer_buttonLeft"
+                                data-dismiss="modal">Abbrechen
+                        </button>
 
 
                     </div>
@@ -101,7 +102,9 @@
                         </div>
 
 
-                        <button type="button" class="btn btn-secondary btn-block" id="producer_buttonRight" data-dismiss="modal" on:click={producer_add_To_Database}>Produzent hinzufügen</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="producer_buttonRight"
+                                data-dismiss="modal" on:click={producer_add_To_Database}>Produzent hinzufügen
+                        </button>
 
                     </div>
 
@@ -112,7 +115,7 @@
             </div>
         </div>
     </div>
-    
+
 </main>
 
 <style>
@@ -142,16 +145,18 @@
         border-width: 0;
         box-shadow: none;
     }
+
     .producer_boxesBeside {
         float: left;
         width: 50.00%;
         box-sizing: border-box;
     }
 
-    #producer_boxLeft{
+    #producer_boxLeft {
         padding: 0px 10px 0px 100px;
     }
-    #producer_boxRight{
+
+    #producer_boxRight {
         padding: 0px 100px 0px 10px;
     }
 
@@ -162,6 +167,7 @@
     #producer_exampleModalLongTitle {
         color: white;
     }
+
     .modal-header {
         border-bottom: 0 none;
     }
@@ -170,28 +176,25 @@
         border-top: 0 none;
     }
 
-    #producer_buttonLeft{
+    #producer_buttonLeft {
         color: white;
         background-color: #c82333;
         border-color: #c82333;
     }
-    #producer_buttonLeft:hover{
+
+    #producer_buttonLeft:hover {
         color: black;
         background-color: white;
     }
-    #producer_buttonRight{
+
+    #producer_buttonRight {
         color: #4e4e4e;
         background-color: #ff7500;
         border-color: #ff7500;
     }
-    #producer_buttonRight:hover{
-        color:black;
+
+    #producer_buttonRight:hover {
+        color: black;
         background-color: white;
     }
-    #producer_buttonToggle{
-        color: black;
-        background-color: #ff7500;
-        border-color: #ff7500;
-    }
-
 </style>
