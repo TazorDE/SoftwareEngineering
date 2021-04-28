@@ -87,15 +87,15 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Eintrag bearbeiten
+                        Produkt bearbeiten
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- form for editing an existing produkt. filled with relevant prop data -->
-                    <div class="product_boxesBeside" id="product_boxLeft">
+                    <!-- form for editing an existing product. filled with relevant prop data -->
+                    <div id="product_boxLeft">
                         <label for="produktname">Produktname</label>
                         <input type="text" class="form-control input-field" id="produktname" bind:value="{name}"/>
                         <label for="anzahl">Anzahl</label>
@@ -127,7 +127,7 @@
                             Abbruch
                         </button>
                     </div>
-                    <div class="product_boxesBeside" id="product_boxRight">
+                    <div id="product_boxRight">
                         <label for="verkaufspreis">Verkaufspreis</label>
                         <input type="text" class="form-control input-field" id="verkaufspreis"
                                bind:value="{verkaufspreis}"/>
@@ -140,7 +140,7 @@
                         <label for="mhd">Mindesthaltbarkeitsdatum</label>
                         <input type="date" class="form-control input-field" id="mhd" bind:value="{mhd}"/>
                         <button type="button" class="btn btn-secondary" id="product_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Daten überschreiben
+                                on:click={update_database} data-dismiss="modal">Übernehmen
                         </button>
                     </div>
 
@@ -193,6 +193,10 @@
 
     .modal-header {
         border-bottom: 0 none;
+        align-self: center;
+    }
+    .close{
+        align-self: end;
     }
 
     .modal-title {
@@ -211,7 +215,7 @@
         border-color: #c82333;
         border-radius: 0;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 20px;
         font-weight: 700;
     }
 
@@ -226,7 +230,7 @@
         border-color: #afffa8;
         border-radius: 0;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 20px;
         font-weight: 700;
     }
 
@@ -235,15 +239,9 @@
         background-color: white;
     }
 
-    .product_boxesBeside {
-        /*float: left;*/
-        /*width: 50%;*/
-        /*box-sizing: border-box;*/
-    }
-
     #product_boxLeft {
         padding: 0;
-        margin-right: 60px;
+        margin-right: 40px;
         width: 100%;
     }
 

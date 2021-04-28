@@ -180,8 +180,11 @@
 
     #suppliers_buttonLeft{
         color: white;
+        font-weight: bold;
         background-color: #c82333;
         border-color: #c82333;
+        margin-top: 30px;
+        border-radius: 0;
     }
     #suppliers_buttonLeft:hover{
         color: black;
@@ -189,8 +192,11 @@
     }
     #suppliers_buttonRight{
         color: #4e4e4e;
+        font-weight: bold;
         background-color: #ffc825;
         border-color: #ffc825;
+        margin-top: 30px;
+        border-radius: 0;
     }
     #suppliers_buttonRight:hover{
         color:black;

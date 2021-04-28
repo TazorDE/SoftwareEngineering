@@ -178,8 +178,11 @@
 
     #producer_buttonLeft {
         color: white;
+        font-weight: bold;
         background-color: #c82333;
         border-color: #c82333;
+        margin-top: 30px;
+        border-radius: 0;
     }
 
     #producer_buttonLeft:hover {
@@ -188,9 +191,12 @@
     }
 
     #producer_buttonRight {
-        color: #4e4e4e;
-        background-color: #ff7500;
-        border-color: #ff7500;
+        color:black;
+        font-weight: bold;
+        background-color: #afffa8;
+        border-color: #afffa8;
+        margin-top: 30px;
+        border-radius: 0;
     }
 
     #producer_buttonRight:hover {

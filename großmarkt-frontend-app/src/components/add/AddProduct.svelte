@@ -212,8 +212,11 @@
     }
     #product_buttonLeft{
         color: white;
+        font-weight: bold;
         background-color: #c82333;
         border-color: #c82333;
+        margin-top: 30px;
+        border-radius: 0;
     }
     #product_buttonLeft:hover{
         color: black;
@@ -221,8 +224,11 @@
     }
     #product_buttonRight{
         color:black;
+        font-weight: bold;
         background-color: #afffa8;
         border-color: #afffa8;
+        margin-top: 30px;
+        border-radius: 0;
     }
     #product_buttonRight:hover{
         color:black;
