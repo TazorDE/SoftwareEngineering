@@ -7,7 +7,7 @@
     alert += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     alert += '<strong>Oh snap! </strong>';
     alert += 'Es ist ein Fehler beim Löschen der Daten aufgetreten.';
-    alert +=' Bitte versuche es später erneut.</div>';
+    alert += ' Bitte versuche es später erneut.</div>';
 
     function delete_from_database(id) {
         fetch(url,
@@ -20,63 +20,119 @@
             })
             .then(res => {
                 console.log(res);
-                if(res.status == 204){
+                if (res.status == 204) {
                     location.reload();
-                }else{
-                    document.getElementById(`produceralertbox${id}`).innerHTML = alert;
+                } else {
+                    document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
                 }
             })
     }
 </script>
 <main>
     <!-- button to delete entry-->
-    <button type="button" class="border-0 no-bg" data-toggle="modal" data-target="#deleteProducerModal{id}">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash" viewBox="0 0 16 16">
+    <button type="button" class="border-0 no-bg" data-toggle="modal" data-target="#deleteProducersModal{id}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-trash"
+             viewBox="0 0 16 16">
             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+            <path fill-rule="evenodd"
+                  d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
         </svg>
     </button>
 
 
     <!-- Modal used to make sure of users intent to delete -->
-    <div class="modal fade" id="deleteProducerModal{id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deleteProducersModal{id}" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">
-                        Möchtest du den Produzenten wirklich löschen?
-                    </h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="modal-content background">
+                <h2 class="modal-title" id="exampleModalLabel">
+                    Wollen Sie den Eintrag wirklich löschen?
+                </h2>
+                <div class="buttons">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">
+                        Abbrechen
                     </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary mr-auto" on:click={delete_from_database(id)} data-dismiss="modal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                        </svg>
-                    </button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
+                    <button type="button" class="btn btn-primary btn-delete" on:click={delete_from_database(id)}
+                            data-dismiss="modal">
+                        Bestätigen
                     </button>
                 </div>
             </div>
         </div>
     </div>
     <!-- Error message -->
-    <div id="produceralertbox{id}"> </div>
+    <div id="supplieralertbox{id}"></div>
 </main>
 
 <style>
-    .bi-trash:hover{
-        fill: #b21f2d;
+    .modal {
+        font-family: Roboto;
+        margin-top: 5%;
     }
-    .no-bg{
-        background: none;
+    label {
+        color: black;
+    }
+
+    .modal-dialog {
+        margin-top: 100px;
+        max-width: 900px;
+        max-height: 400px;
+        background-color: #504c4c;
+        color: #504c4c;
+
+    }
+    .modal-content {
+        color: #504c4c;
+    }
+    .modal-title {
+        text-align: center;
+        color: #ffffff;
+        background-color: #504c4c;
+        font-weight: bold;
+        padding-top: 10%;
+
+    }
+    .background {
+        color: #504c4c;
+        background-color: #504c4c;
+    }
+    .buttons {
+        display: inline;
+        color: #504c4c;
+        background-color: #504c4c;
+        margin-top: 100px;
+        text-align: center;
+    }
+    .btn {
+        border-radius: 0;
+        background: #504c4c;
+        margin-bottom: 100px;
+        outline: none;
+        border: none;
+        width: 30%;
+    }
+    .btn-cancel {
+        color: white;
+        background-color: #c82333;
+        border-color: #c82333;
+        font-size: 20px;
+    }
+
+    .btn-cancel:hover {
+        color: black;
+    }
+
+    .btn-delete {
+        color: black;
+        background: #f8cc4c;
+        font-weight: 700;
+        font-size: 20px;
+        margin-left: 50px;
+
+    }
+
+    .btn-delete:hover {
+        color: #504c4c;
+        background-color: white;
     }
 </style>
-
