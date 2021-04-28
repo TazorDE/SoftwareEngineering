@@ -44,33 +44,20 @@
     <div class="modal fade" id="deleteSuppliersModal{id}" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">
-                        Möchtest du den Lieferanten wirklich löschen?
-                    </h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            <div class="modal-content background">
+                    <h2 class="modal-title" id="exampleModalLabel">
+                        Wollen Sie den Eintrag wirklich löschen?
+                    </h2>
+                 <div class="buttons">
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">
+                        Abbrechen
                     </button>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary mr-auto" on:click={delete_from_database(id)}
+                    <button type="button" class="btn btn-primary btn-delete" on:click={delete_from_database(id)}
                             data-dismiss="modal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="16" fill="currentColor"
-                             class="bi bi-check-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
-                        </svg>
+                        Bestätigen
                     </button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="200" height="16" fill="currentColor"
-                             class="bi bi-x-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                    </button>
+                 </div>
                 </div>
-            </div>
         </div>
     </div>
     <!-- Error message -->
@@ -78,6 +65,76 @@
 </main>
 
 <style>
+    .modal {
+        font-family: Roboto;
+        margin-top: 5%;
+    }
+    label {
+        color: black;
+    }
+
+    .modal-dialog {
+        margin-top: 100px;
+        max-width: 900px;
+        max-height: 400px;
+        background-color: #504c4c;
+        color: #504c4c;
+
+    }
+    .modal-content {
+        color: #504c4c;
+    }
+    .modal-title {
+        text-align: center;
+        color: #ffffff;
+        background-color: #504c4c;
+        font-weight: bold;
+        padding-top: 10%;
+
+    }
+    .background {
+        color: #504c4c;
+        background-color: #504c4c;
+    }
+    .buttons {
+        display: inline;
+        color: #504c4c;
+        background-color: #504c4c;
+        margin-top: 100px;
+        text-align: center;
+    }
+    .btn {
+        border-radius: 0;
+        background: #504c4c;
+        margin-bottom: 100px;
+        outline: none;
+        border: none;
+        width: 30%;
+    }
+    .btn-cancel {
+        color: white;
+        background-color: #c82333;
+        border-color: #c82333;
+        font-size: 20px;
+    }
+
+    .btn-cancel:hover {
+        color: black;
+    }
+
+    .btn-delete {
+        color: black;
+        background: #f8cc4c;
+        font-weight: 700;
+        font-size: 20px;
+        margin-left: 50px;
+
+    }
+
+    .btn-delete:hover {
+        color: #504c4c;
+        background-color: white;
+    }
     .close {
         color: #ffffff;
     }
