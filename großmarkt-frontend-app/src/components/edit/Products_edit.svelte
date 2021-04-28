@@ -31,44 +31,41 @@
     alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
-        //store updated values in object
-        let product_data = {
-            "id": id,
-            "name": name,
-            "anzahl": anzahl,
-            "herkunft": herkunft,
-            "kategorie": kategorie,
-            "verkaufspreis": verkaufspreis,
-            "einkaufspreis": einkaufspreis,
-            "mhd": mhd,
-            "bezugsquelle": bezugsquelle
+        if(!name){
+            console.error('Product name is empty');
+            let productEditAlert = document.getElementById('productEditAlert');
+            productEditAlert.innerHTML = '<div class="alert '+
+            'alert-dismissible alert-danger">'+
+            '<button type="button" class="close" data-dismiss="alert">'+
+            '&times;</button> <strong>Error!</strong> '+
+            'Bitte gib einen Produkttnamen ein um fortzufahren</div>';
+        }else{
+            //api call to update the product
+            fetch(url, {
+                method: method,
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id": id,
+                    "name": name,
+                    "anzahl": anzahl,
+                    "herkunft": herkunft,
+                    "kategorie": kategorie,
+                    "verkaufspreis": verkaufspreis,
+                    "einkaufspreis": einkaufspreis,
+                    "mhd": mhd,
+                    "bezugsquelle": bezugsquelle
+                })
+            }).then(res => {
+                if (res.status == 200) {
+                    location.reload();
+                }else{
+                    document.getElementById(`productalertbox${id}`).innerHTML = alert;
+                }
+            });
         }
-        console.log(product_data);
-        //api call to update the product
-        fetch(url, {
-            method: method,
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "id": id,
-                "name": name,
-                "anzahl": anzahl,
-                "herkunft": herkunft,
-                "kategorie": kategorie,
-                "verkaufspreis": verkaufspreis,
-                "einkaufspreis": einkaufspreis,
-                "mhd": mhd,
-                "bezugsquelle": bezugsquelle
-            })
-        }).then(res => {
-            if (res.status == 200) {
-                location.reload();
-            }else{
-                document.getElementById(`productalertbox${id}`).innerHTML = alert;
-            }
-        });
     }
 </script>
 
@@ -141,10 +138,10 @@
                         <label for="mhd">Mindesthaltbarkeitsdatum</label>
                         <input type="date" class="form-control input-field" id="mhd" bind:value="{mhd}"/>
                         <button type="button" class="btn btn-secondary" id="product_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Übernehmen
+                                on:click={update_database}>Übernehmen
                         </button>
                     </div>
-
+                    <div id="productEditAlert" />
                 </div>
 
 

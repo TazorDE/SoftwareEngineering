@@ -19,37 +19,38 @@
     let url="http://localhost:3000/api/v1/products";
 
     function product_add_To_DB() {
-        let product = {
-            "name": produkt_newProduktname,
-            "anzahl": produkt_newAnzahl,
-            "herkunft": produkt_newHerkunft,
-            "kategorie": produkt_newKategorie,
-            "verkaufspreis": produkt_newVerkaufspreis,
-            "einkaufspreis": produkt_newEinkaufspreis,
-            "mhd": produkt_newMhd,
-            "bezugsquelle": produkt_newBezugsquelle
+        if(produkt_newProduktname == ''){
+            //present error message:
+            let productAddAlert = document.getElementById('productAddAlert');
+            productAddAlert.innerHTML = '<div class="alert '+
+            'alert-dismissible alert-danger">'+
+            '<button type="button" class="close" data-dismiss="alert">'+
+            '&times;</button> <strong>Error!</strong> '+
+            'Bitte gib einen Produktnamen ein um fortzufahren</div>';
+        }else{
+            fetch(url, {
+                method: 'POST',
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "name": produkt_newProduktname,
+                    "anzahl": produkt_newAnzahl,
+                    "herkunft": produkt_newHerkunft,
+                    "kategorie": produkt_newKategorie,
+                    "verkaufspreis": produkt_newVerkaufspreis,
+                    "einkaufspreis": produkt_newEinkaufspreis,
+                    "mhd": produkt_newMhd,
+                    "bezugsquelle": produkt_newBezugsquelle
+                }),
+            }).then(res=>{
+                if(res.status == 200){
+                    location.reload();
+                }
+            })
         }
-        fetch(url, {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "name": produkt_newProduktname,
-                "anzahl": produkt_newAnzahl,
-                "herkunft": produkt_newHerkunft,
-                "kategorie": produkt_newKategorie,
-                "verkaufspreis": produkt_newVerkaufspreis,
-                "einkaufspreis": produkt_newEinkaufspreis,
-                "mhd": produkt_newMhd,
-                "bezugsquelle": produkt_newBezugsquelle
-            }),
-        }).then(res=>{
-            if(res.status == 200){
-                location.reload();
-            }
-        })
+
     }
 </script>
 
@@ -146,10 +147,10 @@
                                    aria-label="sourceOfProduct"
                                    aria-describedby="product_basic-addon1" bind:this="{produkt_inputBezugsquelle}" bind:value={produkt_newBezugsquelle}>
                         </div>
-                        <button type="button" class="btn btn-secondary btn-block" id="product_buttonRight" data-dismiss="modal" on:click={product_add_To_DB}>Produkt hinzufügen</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="product_buttonRight" on:click={product_add_To_DB}>Produkt hinzufügen</button>
 
                     </div>
-
+                    <div id="productAddAlert" />
                 </div>
                 <div class="modal-footer">
 
