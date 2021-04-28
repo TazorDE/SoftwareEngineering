@@ -78,11 +78,16 @@
 </main>
 
 <style>
+    .close {
+        color: #ffffff;
+    }
+
     .bi-trash:hover {
         fill: #b21f2d;
         stroke-width: 6;
     }
-    .no-bg{
+
+    .no-bg {
         background: none;
     }
 </style>

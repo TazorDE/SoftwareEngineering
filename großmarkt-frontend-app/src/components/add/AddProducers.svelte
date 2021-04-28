@@ -17,15 +17,15 @@
 
 
     function producer_add_To_Database() {
-        if(newName == ''){
+        if (newName == '') {
             //present error message:
             let producerAddAlert = document.getElementById('producerAddAlert');
-            producerAddAlert.innerHTML = '<div class="alert '+
-            'alert-dismissible alert-danger">'+
-            '<button type="button" class="close" data-dismiss="alert">'+
-            '&times;</button> <strong>Error!</strong> '+
-            'Bitte gib einen Produzentennamen ein um fortzufahren</div>';
-        }else{
+            producerAddAlert.innerHTML = '<div class="alert ' +
+                'alert-dismissible alert-danger">' +
+                '<button type="button" class="close" data-dismiss="alert">' +
+                '&times;</button> <strong>Error!</strong> ' +
+                'Bitte gib einen Produzentennamen ein um fortzufahren</div>';
+        } else {
             let producer = {
                 "name": newName,
                 "telnr": newTelefonnummer,
@@ -117,7 +117,7 @@
                         </button>
 
                     </div>
-                    <div id="producerAddAlert" />
+                    <div id="producerAddAlert"/>
                 </div>
                 <div class="modal-footer">
 
@@ -129,12 +129,17 @@
 </main>
 
 <style>
-    .form-control, select{
+    .close {
+        color: #ffffff;
+    }
+
+    .form-control, select {
         border-radius: 0;
         border: 0;
         outline: none;
         box-shadow: none;
     }
+
     .add-producer {
         float: right;
         margin-right: 35px;
@@ -207,7 +212,7 @@
     }
 
     #producer_buttonRight {
-        color:black;
+        color: black;
         font-weight: bold;
         background-color: #afffa8;
         border-color: #afffa8;
@@ -219,7 +224,8 @@
         color: black;
         background-color: white;
     }
-    #not_visible{
+
+    #not_visible {
         visibility: hidden;
     }
 </style>

@@ -18,22 +18,22 @@
     let url = "http://localhost:3000/api/v1/producers";
     let method = "PUT";
     let alert = '<div class="alert alert-dismissible alert-danger">';
-    alert += '<button type="button" class="close" data-dismiss="alert">'+
-    '&times;</button>';
+    alert += '<button type="button" class="close" data-dismiss="alert">' +
+        '&times;</button>';
     alert += '<strong>Oh snap!</strong>';
     alert += 'Es ist ein Fehler beim Ändern der Daten aufgetreten.';
     alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
-        if(!name){
+        if (!name) {
             console.error('Producer name is empty');
             let producerEditAlert = document.getElementById('producerEditAlert');
-            producerEditAlert.innerHTML = '<div class="alert '+
-            'alert-dismissible alert-danger">'+
-            '<button type="button" class="close" data-dismiss="alert">'+
-            '&times;</button> <strong>Error!</strong> '+
-            'Bitte gib einen Produzentennamen ein um fortzufahren</div>';
-        }else{
+            producerEditAlert.innerHTML = '<div class="alert ' +
+                'alert-dismissible alert-danger">' +
+                '<button type="button" class="close" data-dismiss="alert">' +
+                '&times;</button> <strong>Error!</strong> ' +
+                'Bitte gib einen Produzentennamen ein um fortzufahren</div>';
+        } else {
             console.log(name);
             fetch(url, {
                 method: method,
@@ -53,7 +53,7 @@
 
                 if (res.status == 200) {
                     location.reload();
-                }else{
+                } else {
                     document.getElementById(`produceralertbox${id}`).innerHTML = alert;
                 }
             });
@@ -108,9 +108,9 @@
                         <button type="button" class="btn btn-primary" id="producer_buttonRight"
                                 on:click={update_database}>Übernehmen
                         </button>
-                        <div id="producerEditAlert" />
+                        <div id="producerEditAlert"/>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer" id="footer">
                 </div>
@@ -121,25 +121,34 @@
     <div id="produceralertbox{id}"></div>
 </main>
 <style>
-    .form-control, select{
+    .close {
+        color: #ffffff;
+    }
+
+    .form-control, select {
         border-radius: 0;
         outline: none;
         border: 0;
         box-shadow: none;
     }
+
     label {
         color: #ffffff;
     }
-    .bi-pencil-fill:hover{
+
+    .bi-pencil-fill:hover {
         fill: #aefda7;
     }
+
     .input-field {
         margin-bottom: 15px;
         width: 100%;
     }
-    .no-bg{
+
+    .no-bg {
         background: none;
     }
+
     #producer_boxLeft {
         padding: 0 10px 0 100px;
     }

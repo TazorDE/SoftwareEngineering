@@ -31,15 +31,15 @@
     alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
-        if(!name){
+        if (!name) {
             console.error('Product name is empty');
             let productEditAlert = document.getElementById('productEditAlert');
-            productEditAlert.innerHTML = '<div class="alert '+
-            'alert-dismissible alert-danger">'+
-            '<button type="button" class="close" data-dismiss="alert">'+
-            '&times;</button> <strong>Error!</strong> '+
-            'Bitte gib einen Produkttnamen ein um fortzufahren</div>';
-        }else{
+            productEditAlert.innerHTML = '<div class="alert ' +
+                'alert-dismissible alert-danger">' +
+                '<button type="button" class="close" data-dismiss="alert">' +
+                '&times;</button> <strong>Error!</strong> ' +
+                'Bitte gib einen Produkttnamen ein um fortzufahren</div>';
+        } else {
             //api call to update the product
             fetch(url, {
                 method: method,
@@ -61,7 +61,7 @@
             }).then(res => {
                 if (res.status == 200) {
                     location.reload();
-                }else{
+                } else {
                     document.getElementById(`productalertbox${id}`).innerHTML = alert;
                 }
             });
@@ -141,7 +141,7 @@
                                 on:click={update_database}>Übernehmen
                         </button>
                     </div>
-                    <div id="productEditAlert" />
+                    <div id="productEditAlert"/>
                 </div>
 
 
@@ -154,26 +154,34 @@
 </main>
 
 <style>
-    .form-control, select{
+    .close {
+        color: #ffffff;
+    }
+
+    .form-control, select {
         border-radius: 0;
         outline: none;
         border: 0;
         box-shadow: none;
     }
+
     label {
         color: #ffffff;
     }
-    .bi-pencil-fill:hover{
+
+    .bi-pencil-fill:hover {
         fill: #aefda7;
     }
+
     .input-field {
         margin-bottom: 15px;
         width: 100%;
     }
 
-    .no-bg{
+    .no-bg {
         background: none;
     }
+
     #product_boxLeft {
         padding: 0 10px 0 100px;
     }

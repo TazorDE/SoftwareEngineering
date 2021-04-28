@@ -26,15 +26,15 @@
     alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
-        if(!name){
+        if (!name) {
             console.error('Supplier name is empty');
             let supplierEditAlert = document.getElementById('supplierEditAlert');
-            supplierEditAlert.innerHTML = '<div class="alert '+
-            'alert-dismissible alert-danger">'+
-            '<button type="button" class="close" data-dismiss="alert">'+
-            '&times;</button> <strong>Error!</strong> '+
-            'Bitte gib einen Lieferantennamen ein um fortzufahren</div>';
-        }else{
+            supplierEditAlert.innerHTML = '<div class="alert ' +
+                'alert-dismissible alert-danger">' +
+                '<button type="button" class="close" data-dismiss="alert">' +
+                '&times;</button> <strong>Error!</strong> ' +
+                'Bitte gib einen Lieferantennamen ein um fortzufahren</div>';
+        } else {
             let supplier_data = {
                 "id": id,
                 "name": name,
@@ -53,7 +53,7 @@
             }).then(res => {
                 if (res.status == 200) {
                     location.reload();
-                }else{
+                } else {
                     document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
                 }
             });
@@ -109,7 +109,7 @@
                                 on:click={update_database}>Übernehmen
                         </button>
                     </div>
-                    <div id="supplierEditAlert" />
+                    <div id="supplierEditAlert"/>
                 </div>
             </div>
         </div>
@@ -120,25 +120,34 @@
 </main>
 
 <style>
-    .form-control, select{
+    .close {
+        color: #ffffff;
+    }
+
+    .form-control, select {
         border-radius: 0;
         outline: none;
         border: 0;
         box-shadow: none;
     }
+
     label {
         color: #ffffff;
     }
-    .bi-pencil-fill:hover{
+
+    .bi-pencil-fill:hover {
         fill: #aefda7;
     }
+
     .input-field {
         margin-bottom: 15px;
         width: 100%;
     }
-    .no-bg{
+
+    .no-bg {
         background: none;
     }
+
     #supplier_boxLeft {
         padding: 0 10px 0 100px;
     }
