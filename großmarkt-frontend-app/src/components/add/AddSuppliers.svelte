@@ -69,7 +69,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h5 class="modal-title w-100" id="suppliers_exampleModalLongTitle">Lieferant hinzufügen</h5>
+                    <h3 class="modal-title w-100" id="suppliers_exampleModalLongTitle">Lieferant hinzufügen</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -106,7 +106,7 @@
                             <input type="text" class="form-control" id="suppliers_telefon" placeholder="Telefonnummer"
                                    bind:this={supplier_inputTelefonnummer} bind:value="{supplier_newTelefonnummer}">
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3" id="not_visible">
                             <input type="file" class="form-control" id="suppliers_preisliste" placeholder="Preisliste"
                                    bind:this={supplier_inputPreisliste} bind:value="{supplier_newPreisliste}">
                         </div>
@@ -201,6 +201,9 @@
     #suppliers_buttonRight:hover{
         color:black;
         background-color: white;
+    }
+    #not_visible{
+        visibility: hidden;
     }
 
 

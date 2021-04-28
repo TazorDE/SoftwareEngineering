@@ -21,7 +21,7 @@
     alert += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     alert += '<strong>Oh snap!</strong>';
     alert += 'Es ist ein Fehler beim Ändern der Daten aufgetreten.';
-    alert += ' Bitte versuche es erneut.</div>';
+    alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
         fetch(url, {
@@ -39,8 +39,10 @@
                 "ort": ort
             })
         }).then(res => {
-            console.log(res);
-            if (res.status != 200) {
+
+            if (res.status == 200) {
+                location.reload();
+            }else{
                 document.getElementById(`produceralertbox${id}`).innerHTML = alert;
             }
         });
@@ -59,10 +61,10 @@
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Eintrag bearbeiten
-                    </h5>
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100" id="exampleModalLabel">
+                        Produzent bearbeiten
+                    </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -77,7 +79,7 @@
                         <label for="plz">PLZ</label>
                         <input type="text" class="form-control input-field" id="plz" bind:value="{plz}"/>
                         <button type="button" class="btn btn-secondary" id="producer_buttonLeft" data-dismiss="modal">
-                            Abbruch
+                            Abbrechen
                         </button>
                     </div>
                     <div class="producer_boxesBeside" id="producer_boxRight">
@@ -92,7 +94,7 @@
                                    placeholder="Preisliste">
                         </div>
                         <button type="button" class="btn btn-primary" id="producer_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Daten überschreiben
+                                on:click={update_database} data-dismiss="modal">Übernehmen
                         </button>
                     </div>
                 </div>

@@ -65,7 +65,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h5 class="modal-title w-100" id="product_exampleModalLongTitle">Produkt hinzufügen</h5>
+                    <h3 class="modal-title w-100" id="product_exampleModalLongTitle">Produkt hinzufügen</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

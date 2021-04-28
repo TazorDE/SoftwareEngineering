@@ -28,7 +28,7 @@
     alert += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     alert += '<strong>Oh snap!</strong>';
     alert += 'Es ist ein Fehler beim Ändern der Daten aufgetreten.';
-    alert += ' Bitte versuche es erneut.</div>';
+    alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
         //store updated values in object
@@ -63,8 +63,9 @@
                 "bezugsquelle": bezugsquelle
             })
         }).then(res => {
-            console.log(res);
-            if (res.status != 200) {
+            if (res.status == 200) {
+                location.reload();
+            }else{
                 document.getElementById(`productalertbox${id}`).innerHTML = alert;
             }
         });
@@ -85,17 +86,17 @@
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100">
                         Produkt bearbeiten
-                    </h5>
+                    </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- form for editing an existing product. filled with relevant prop data -->
-                    <div id="product_boxLeft">
+                    <!-- form for editing an existing produkt. filled with relevant prop data -->
+                    <div class="product_boxesBeside" id="product_boxLeft">
                         <label for="produktname">Produktname</label>
                         <input type="text" class="form-control input-field" id="produktname" bind:value="{name}"/>
                         <label for="anzahl">Anzahl</label>
@@ -124,10 +125,10 @@
                             <option>Sonstige</option>
                         </select>
                         <button type="button" class="btn btn-secondary" id="product_buttonLeft" data-dismiss="modal">
-                            Abbruch
+                            Abbrechen
                         </button>
                     </div>
-                    <div id="product_boxRight">
+                    <div class="product_boxesBeside" id="product_boxRight">
                         <label for="verkaufspreis">Verkaufspreis</label>
                         <input type="text" class="form-control input-field" id="verkaufspreis"
                                bind:value="{verkaufspreis}"/>
@@ -193,10 +194,6 @@
 
     .modal-header {
         border-bottom: 0 none;
-        align-self: center;
-    }
-    .close{
-        align-self: end;
     }
 
     .modal-title {
@@ -215,7 +212,7 @@
         border-color: #c82333;
         border-radius: 0;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 40px;
         font-weight: 700;
     }
 
@@ -230,7 +227,7 @@
         border-color: #afffa8;
         border-radius: 0;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 40px;
         font-weight: 700;
     }
 
@@ -239,9 +236,15 @@
         background-color: white;
     }
 
+    .product_boxesBeside {
+        /*float: left;*/
+        /*width: 50%;*/
+        /*box-sizing: border-box;*/
+    }
+
     #product_boxLeft {
         padding: 0;
-        margin-right: 40px;
+        margin-right: 60px;
         width: 100%;
     }
 
