@@ -184,6 +184,7 @@ import ProductsDelete from '../delete/Products_delete.svelte';
         margin-right: 25px;
         position: relative;
         flex: auto;
+        outline: 0;
     }
 
     .btn-primary:focus, .btn:focus {
@@ -197,6 +198,7 @@ import ProductsDelete from '../delete/Products_delete.svelte';
         border-radius: 25px;
         border-width: 0;
         padding-left: 30px;
+        outline: 0;
     }
 
     #searchFilter {

@@ -119,6 +119,12 @@
 </main>
 
 <style>
+    .form-control, select{
+        border-radius: 0;
+        border: 0;
+        outline: none;
+        box-shadow: none;
+    }
     .add-producer {
         float: right;
         margin-right: 35px;

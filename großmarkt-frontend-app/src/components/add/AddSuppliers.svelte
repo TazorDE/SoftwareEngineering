@@ -127,6 +127,12 @@
 </main>
 
 <style>
+    .form-control, select{
+        border-radius: 0;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+    }
     .add-supplier {
         float: right;
         margin-right: 35px;

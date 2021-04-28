@@ -110,6 +110,12 @@
 </main>
 
 <style>
+    .form-control, select{
+        border-radius: 0;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+    }
     label {
         color: #ffffff;
     }
@@ -169,7 +175,7 @@
         border-color: #c82333;
         border-radius: 0;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 20px;
         font-weight: 700;
     }
 
@@ -184,7 +190,7 @@
         border-color: #afffa8;
         border-radius: 0;
         width: 100%;
-        margin-top: 116px;
+        margin-top: 105px;
         font-weight: 700;
     }
 

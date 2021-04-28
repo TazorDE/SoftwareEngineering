@@ -96,7 +96,7 @@
                 </div>
                 <div class="modal-body">
                     <!-- form for editing an existing produkt. filled with relevant prop data -->
-                    <div class="product_boxesBeside" id="product_boxLeft">
+                    <div id="product_boxLeft">
                         <label for="produktname">Produktname</label>
                         <input type="text" class="form-control input-field" id="produktname" bind:value="{name}"/>
                         <label for="anzahl">Anzahl</label>
@@ -157,6 +157,12 @@
 </main>
 
 <style>
+    .form-control, select{
+        border-radius: 0;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+    }
     label {
         color: #ffffff;
     }
@@ -241,11 +247,6 @@
         background-color: white;
     }
 
-    .product_boxesBeside {
-        /*float: left;*/
-        /*width: 50%;*/
-        /*box-sizing: border-box;*/
-    }
 
     #product_boxLeft {
         padding: 0;

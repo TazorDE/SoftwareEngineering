@@ -161,7 +161,12 @@
 </main>
 
 <style>
-
+    .form-control, select{
+        border-radius: 0;
+        border: 0;
+        outline: none;
+        box-shadow: none;
+    }
     .product_button-add-product{
         float: right;
         margin-right: 35px;
