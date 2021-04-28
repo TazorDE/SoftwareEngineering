@@ -17,43 +17,33 @@
     let method = "POST"
 
     function suppliers_add_To_DB() {
-        let product_data = {
-            "name": supplier_newName,
-            "telnr": supplier_newTelefonnummer,
-            "straße": supplier_newStraße,
-            "plz": supplier_newPLZ,
-            "ort": supplier_newOrt
-        }
-        fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "name": supplier_newName,
-                "telnr": supplier_newTelefonnummer,
-                "straße": supplier_newStraße,
-                "plz": supplier_newPLZ,
-                "ort": supplier_newOrt
+        if(supplier_newName == ''){
+            let supplierAddAlert = document.getElementById('supplierAddAlert');
+            supplierAddAlert.innerHTML = '<div class="alert '+
+            'alert-dismissible alert-danger">'+
+            '<button type="button" class="close" data-dismiss="alert">'+
+            '&times;</button> <strong>Error!</strong> '+
+            'Bitte gib einen Lieferantennamen ein um fortzufahren</div>';
+        }else{
+                fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "name": supplier_newName,
+                    "telnr": supplier_newTelefonnummer,
+                    "straße": supplier_newStraße,
+                    "plz": supplier_newPLZ,
+                    "ort": supplier_newOrt
+                })
+            }).then(res=>{
+                if(res.status == 200){
+                    location.reload();
+                }
             })
-        }).then(res=>{
-            if(res.status == 200){
-                location.reload();
-            }
-        })
+        }
     }
-
-    // function resetData(){
-    //     supplier_inputName.value = '';
-    //     supplier_inputStraße.value = '';
-    //     supplier_inputPLZ.value = '';
-    //     supplier_inputOrt.value = '';
-    //     supplier_inputTelefonnummer.value = '';
-    //     supplier_inputPreisliste.value = '';
-    // }
-
-
-
 
 </script>
 
@@ -112,10 +102,10 @@
                         </div>
 
 
-                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonRight" data-dismiss="modal" on:click={suppliers_add_To_DB}>Lieferant hinzufügen</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonRight" on:click={suppliers_add_To_DB}>Lieferant hinzufügen</button>
 
                     </div>
-
+                    <div id="supplierAddAlert" />
                 </div>
                 <div class="modal-footer">
 
