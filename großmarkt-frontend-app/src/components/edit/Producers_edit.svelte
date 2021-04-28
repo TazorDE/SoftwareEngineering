@@ -61,10 +61,10 @@
          aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">
-                        Eintrag bearbeiten
-                    </h5>
+                <div class="modal-header text-center">
+                    <h3 class="modal-title w-100" id="exampleModalLabel">
+                        Produzent bearbeiten
+                    </h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -79,7 +79,7 @@
                         <label for="plz">PLZ</label>
                         <input type="text" class="form-control input-field" id="plz" bind:value="{plz}"/>
                         <button type="button" class="btn btn-secondary" id="producer_buttonLeft" data-dismiss="modal">
-                            Abbruch
+                            Abbrechen
                         </button>
                     </div>
                     <div class="producer_boxesBeside" id="producer_boxRight">
@@ -94,7 +94,7 @@
                                    placeholder="Preisliste">
                         </div>
                         <button type="button" class="btn btn-primary" id="producer_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Daten überschreiben
+                                on:click={update_database} data-dismiss="modal">Übernehmen
                         </button>
                     </div>
                 </div>

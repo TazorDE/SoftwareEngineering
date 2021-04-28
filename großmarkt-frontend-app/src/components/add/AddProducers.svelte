@@ -57,7 +57,7 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header text-center">
-                    <h5 class="modal-title w-100" id="producer_exampleModalLongTitle">Produzent hinzufügen</h5>
+                    <h3 class="modal-title w-100" id="producer_exampleModalLongTitle">Produzent hinzufügen</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -96,7 +96,7 @@
                             <input type="text" class="form-control" id="producer_telefon" placeholder="Telefonnummer"
                                    bind:this={inputTelefonnummer} bind:value="{newTelefonnummer}">
                         </div>
-                        <div class="input-group mb-3">
+                        <div class="input-group mb-3" id="not_visible">
                             <input type="file" class="form-control" id="producer_preisliste" placeholder="Preisliste"
                                    bind:this={inputPreisliste} bind:value="{newPreisliste}">
                         </div>
@@ -196,5 +196,8 @@
     #producer_buttonRight:hover {
         color: black;
         background-color: white;
+    }
+    #not_visible{
+        visibility: hidden;
     }
 </style>
