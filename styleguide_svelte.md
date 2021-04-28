@@ -95,8 +95,6 @@ Block comments are indented at the same level as the surrounding code. They may 
     // is this.
 
     /* This is fine, too. */
-Do not use JSDoc (/** … */) for implementation comments.
-
 ### 3.2.5 Language features
 JavaScript includes many dubious (and even dangerous) features. This section delineates which features may or may not be used, and any additional constraints on their use.
 #### 3.2.5.1 Local variables
@@ -189,21 +187,21 @@ Identifiers use only ASCII letters and digits, and, in a small number of cases n
 
 Give as descriptive a name as possible, within reason. Do not worry about saving horizontal space as it is far more important to make your code immediately understandable by a new reader. Do not use abbreviations that are ambiguous or unfamiliar to readers outside your project, and do not abbreviate by deleting letters within a word.
 #### 3.2.6.1 Package names
-Package names are all lowerCamelCase.
+Package names are all lowerCamelCase, snake_case or a combination of the two.
 #### 3.2.6.2 Class names
 Class, interface, record, and typedef names are written in UpperCamelCase.
 #### 3.2.6.3 Method names
-Method names are written in lowerCamelCase.
+Method names are written in lowerCamelCase, snake_case or a combination of the two.
 #### 3.2.6.4 Enum names
 Enum names are written in UpperCamelCase.
 #### 3.2.6.5 Constant names
-Constant names use CONSTANT_CASE.
+Constant names use CONSTANT_CASE, lowerCamelCase, snake_case or a combination of the two.
 #### 3.2.6.6 Non-constant field names
-Non-constant field names are written in lowerCamelCase.
+Non-constant field names are written in lowerCamelCase, snake_case or a combination of the two.
 #### 3.2.6.7 Parameter names
-Parameter names are written in lowerCamelCase.
+Parameter names are written in lowerCamelCase, snake_case or a combination of the two.
 #### 3.2.6.8 Local variable names
-Local variable names are written in lowerCamelCase.
+Local variable names are written in lowerCamelCase, snake_case or a combination of the two.
 
 ## 3.3 Main tag implementation
 ### 3.3.1 HTML Style Rules

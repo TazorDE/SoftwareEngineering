@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"starting dev server\" && nodemon index.js",
+    "dev": "echo \"starting dev server\" && nodemon index.js",
     "start": "echo \"starting production server\" && node index.js"
   },
   "author": "",
