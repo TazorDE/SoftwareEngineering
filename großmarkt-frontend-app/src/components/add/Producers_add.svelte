@@ -17,7 +17,7 @@
 
 
     function producer_add_To_Database() {
-        if (newName == '') {
+        if (newName === '') {
             //present error message:
             let producerAddAlert = document.getElementById('producerAddAlert');
             producerAddAlert.innerHTML = '<div class="alert ' +
@@ -42,7 +42,7 @@
                 },
                 body: JSON.stringify(producer),
             }).then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     location.reload();
                 }
             })
@@ -143,7 +143,6 @@
     .add-producer {
         float: right;
         margin-right: 35px;
-        margin-text-outline: 0;
         margin-bottom: 10px;
         background: #ffc29e;
         color: #4e4e4e;
@@ -162,7 +161,7 @@
         border-width: 0;
     }
 
-    .btn-primary:focus, .btn:focus {
+    .btn:focus {
         border-width: 0;
         box-shadow: none;
     }
@@ -174,11 +173,11 @@
     }
 
     #producer_boxLeft {
-        padding: 0px 10px 0px 100px;
+        padding: 0 10px 0 100px;
     }
 
     #producer_boxRight {
-        padding: 0px 100px 0px 10px;
+        padding: 0 100px 0 10px;
     }
 
     .modal-content {

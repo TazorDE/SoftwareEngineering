@@ -17,7 +17,7 @@
     let method = "POST"
 
     function suppliers_add_To_DB() {
-        if (supplier_newName == '') {
+        if (supplier_newName === '') {
             let supplierAddAlert = document.getElementById('supplierAddAlert');
             supplierAddAlert.innerHTML = '<div class="alert ' +
                 'alert-dismissible alert-danger">' +
@@ -38,7 +38,7 @@
                     "ort": supplier_newOrt
                 })
             }).then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     location.reload();
                 }
             })
@@ -137,7 +137,6 @@
     .add-supplier {
         float: right;
         margin-right: 35px;
-        margin-text-outline: 0;
         margin-bottom: 10px;
         background: #fdc824;
         color: #4e4e4e;
@@ -164,11 +163,11 @@
     }
 
     #suppliers_boxLeft {
-        padding: 0px 10px 0px 100px;
+        padding: 0 10px 0 100px;
     }
 
     #suppliers_boxRight {
-        padding: 0px 100px 0px 10px;
+        padding: 0 100px 0 10px;
     }
 
     .modal-content {

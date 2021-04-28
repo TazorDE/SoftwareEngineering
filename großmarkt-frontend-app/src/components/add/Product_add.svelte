@@ -19,7 +19,7 @@
     let url = "http://localhost:3000/api/v1/products";
 
     function product_add_To_DB() {
-        if (produkt_newProduktname == '') {
+        if (produkt_newProduktname === '') {
             //present error message:
             let productAddAlert = document.getElementById('productAddAlert');
             productAddAlert.innerHTML = '<div class="alert ' +
@@ -45,7 +45,7 @@
                     "bezugsquelle": produkt_newBezugsquelle
                 }),
             }).then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     location.reload();
                 }
             })
@@ -189,7 +189,6 @@
     .product_button-add-product {
         float: right;
         margin-right: 35px;
-        margin-text-outline: 0;
         margin-bottom: 10px;
         background: #aefda7;
         color: #4e4e4e;

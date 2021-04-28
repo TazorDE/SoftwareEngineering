@@ -59,7 +59,7 @@
                     "bezugsquelle": bezugsquelle
                 })
             }).then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     location.reload();
                 } else {
                     document.getElementById(`productalertbox${id}`).innerHTML = alert;
@@ -204,9 +204,6 @@
         padding: 20px 100px 35px 100px;
     }
 
-    #product_exampleModalLongTitle {
-        color: white;
-    }
 
     .modal-header {
         border-bottom: 0 none;
