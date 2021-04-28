@@ -1,5 +1,5 @@
 <script>
-import AddProduct from "../add/AddProduct.svelte";
+import AddProduct from "../add/Product_add.svelte";
 import ProductsEdit from "../edit/Products_edit.svelte";
 import ProductsDelete from '../delete/Products_delete.svelte';
 

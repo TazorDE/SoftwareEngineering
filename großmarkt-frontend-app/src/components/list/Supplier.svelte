@@ -1,5 +1,5 @@
 <script>
-    import AddSuppliers from '../add/AddSuppliers.svelte';
+    import AddSuppliers from '../add/Suppliers_add.svelte';
     import SuppliersEdit from '../edit/Suppliers_edit.svelte';
     import SuppliersDelete from '../delete/Suppliers_delete.svelte';
     /**
@@ -173,6 +173,7 @@
         text-align: right;
         margin-right: 25px;
         position: relative;
+        outline: 0;
         flex: auto;
     }
 
@@ -184,6 +185,7 @@
         border-radius: 25px;
         border-width: 0;
         padding-left: 30px;
+        outline: 0;
     }
 
     #searchFilter {
