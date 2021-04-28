@@ -51,7 +51,7 @@
                 })
             }).then(res => {
 
-                if (res.status == 200) {
+                if (res.status === 200) {
                     location.reload();
                 } else {
                     document.getElementById(`produceralertbox${id}`).innerHTML = alert;
@@ -169,10 +169,6 @@
     .modal-content {
         background: #4e4e4e;
         padding: 20px 100px 35px 100px;
-    }
-
-    #producer_exampleModalLongTitle {
-        color: white;
     }
 
     .modal-header {

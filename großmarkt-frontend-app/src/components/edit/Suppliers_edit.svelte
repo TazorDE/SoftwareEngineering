@@ -51,7 +51,7 @@
                 },
                 body: JSON.stringify(supplier_data)
             }).then(res => {
-                if (res.status == 200) {
+                if (res.status === 200) {
                     location.reload();
                 } else {
                     document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
