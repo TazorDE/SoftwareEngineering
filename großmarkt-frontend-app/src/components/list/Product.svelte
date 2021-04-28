@@ -162,6 +162,7 @@ import ProductsDelete from '../delete/Products_delete.svelte';
         cursor: pointer;
     }
 
+
     main {
         text-align: left;
     }
