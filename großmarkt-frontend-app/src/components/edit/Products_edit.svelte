@@ -66,7 +66,7 @@
             if (res.status == 200) {
                 location.reload();
             }else{
-                document.getElementById(`produceralertbox${id}`).innerHTML = alert;
+                document.getElementById(`productalertbox${id}`).innerHTML = alert;
             }
         });
     }
