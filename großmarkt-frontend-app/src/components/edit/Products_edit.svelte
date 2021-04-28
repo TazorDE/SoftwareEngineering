@@ -63,9 +63,10 @@
                 "bezugsquelle": bezugsquelle
             })
         }).then(res => {
-            console.log(res);
-            if (res.status != 200) {
-                document.getElementById(`productalertbox${id}`).innerHTML = alert;
+            if (res.status == 200) {
+                location.reload();
+            }else{
+                document.getElementById(`produceralertbox${id}`).innerHTML = alert;
             }
         });
     }
