@@ -21,7 +21,7 @@
     alert += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     alert += '<strong>Oh snap!</strong>';
     alert += 'Es ist ein Fehler beim Ändern der Daten aufgetreten.';
-    alert += ' Bitte versuche es erneut.</div>';
+    alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
         fetch(url, {
