@@ -7,7 +7,7 @@
     alert += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
     alert += '<strong>Oh snap! </strong>';
     alert += 'Es ist ein Fehler beim Löschen der Daten aufgetreten.';
-    alert +=' Bitte versuche es erneut.</div>';
+    alert +=' Bitte versuche es später erneut.</div>';
 
     function delete_from_database(id) {
         fetch(url,
@@ -20,7 +20,9 @@
             })
             .then(res => {
                 console.log(res);
-                if(res.status !== 204){
+                if(res.status == 204){
+                    location.reload();
+                }else{
                     document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
                 }
             })
