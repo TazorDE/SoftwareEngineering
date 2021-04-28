@@ -34,7 +34,7 @@
         if(!name){
             console.error('Product name is empty');
             let productEditAlert = document.getElementById('productEditAlert');
-            producerEditAlert.innerHTML = '<div class="alert '+
+            productEditAlert.innerHTML = '<div class="alert '+
             'alert-dismissible alert-danger">'+
             '<button type="button" class="close" data-dismiss="alert">'+
             '&times;</button> <strong>Error!</strong> '+
@@ -138,11 +138,10 @@
                         <label for="mhd">Mindesthaltbarkeitsdatum</label>
                         <input type="date" class="form-control input-field" id="mhd" bind:value="{mhd}"/>
                         <button type="button" class="btn btn-secondary" id="product_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Übernehmen
+                                on:click={update_database}>Übernehmen
                         </button>
                     </div>
                     <div id="productEditAlert" />
-
                 </div>
 
 

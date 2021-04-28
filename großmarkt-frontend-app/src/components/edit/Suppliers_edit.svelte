@@ -26,28 +26,38 @@
     alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
-        let supplier_data = {
-            "id": id,
-            "name": name,
-            "telnr": telefonnummer,
-            "straße": straße,
-            "plz": plz,
-            "ort": ort
-        }
-        fetch(url, {
-            method: method,
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(supplier_data)
-        }).then(res => {
-            if (res.status == 200) {
-                location.reload();
-            }else{
-                document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
+        if(!name){
+            console.error('Supplier name is empty');
+            let supplierEditAlert = document.getElementById('supplierEditAlert');
+            supplierEditAlert.innerHTML = '<div class="alert '+
+            'alert-dismissible alert-danger">'+
+            '<button type="button" class="close" data-dismiss="alert">'+
+            '&times;</button> <strong>Error!</strong> '+
+            'Bitte gib einen Lieferantennamen ein um fortzufahren</div>';
+        }else{
+            let supplier_data = {
+                "id": id,
+                "name": name,
+                "telnr": telefonnummer,
+                "straße": straße,
+                "plz": plz,
+                "ort": ort
             }
-        });
+            fetch(url, {
+                method: method,
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(supplier_data)
+            }).then(res => {
+                if (res.status == 200) {
+                    location.reload();
+                }else{
+                    document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
+                }
+            });
+        }
     }
 
 </script>
@@ -96,11 +106,11 @@
                         <label for="ort">Ort</label>
                         <input type="text" class="form-control input-field" id="ort" bind:value="{ort}"/>
                         <button type="button" class="btn btn-secondary" id="supplier_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Übernehmen
+                                on:click={update_database}>Übernehmen
                         </button>
                     </div>
+                    <div id="supplierEditAlert" />
                 </div>
-
             </div>
         </div>
     </div>
