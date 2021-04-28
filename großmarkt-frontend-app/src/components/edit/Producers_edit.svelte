@@ -18,34 +18,46 @@
     let url = "http://localhost:3000/api/v1/producers";
     let method = "PUT";
     let alert = '<div class="alert alert-dismissible alert-danger">';
-    alert += '<button type="button" class="close" data-dismiss="alert">&times;</button>';
+    alert += '<button type="button" class="close" data-dismiss="alert">' +
+        '&times;</button>';
     alert += '<strong>Oh snap!</strong>';
     alert += 'Es ist ein Fehler beim Ändern der Daten aufgetreten.';
     alert += ' Bitte versuche es später erneut.</div>';
 
     function update_database() {
-        fetch(url, {
-            method: method,
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "id": id,
-                "name": name,
-                "telnr": telefonnummer,
-                "straße": straße,
-                "plz": plz,
-                "ort": ort
-            })
-        }).then(res => {
+        if (!name) {
+            console.error('Producer name is empty');
+            let producerEditAlert = document.getElementById('producerEditAlert');
+            producerEditAlert.innerHTML = '<div class="alert ' +
+                'alert-dismissible alert-danger">' +
+                '<button type="button" class="close" data-dismiss="alert">' +
+                '&times;</button> <strong>Error!</strong> ' +
+                'Bitte gib einen Produzentennamen ein um fortzufahren</div>';
+        } else {
+            console.log(name);
+            fetch(url, {
+                method: method,
+                mode: 'cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "id": id,
+                    "name": name,
+                    "telnr": telefonnummer,
+                    "straße": straße,
+                    "plz": plz,
+                    "ort": ort
+                })
+            }).then(res => {
 
-            if (res.status == 200) {
-                location.reload();
-            }else{
-                document.getElementById(`produceralertbox${id}`).innerHTML = alert;
-            }
-        });
+                if (res.status == 200) {
+                    location.reload();
+                } else {
+                    document.getElementById(`produceralertbox${id}`).innerHTML = alert;
+                }
+            });
+        }
     }
 </script>
 <main>
@@ -94,9 +106,11 @@
                                    placeholder="Preisliste">
                         </div>
                         <button type="button" class="btn btn-primary" id="producer_buttonRight"
-                                on:click={update_database} data-dismiss="modal">Übernehmen
+                                on:click={update_database}>Übernehmen
                         </button>
+                        <div id="producerEditAlert"/>
                     </div>
+
                 </div>
                 <div class="modal-footer" id="footer">
                 </div>
@@ -107,19 +121,34 @@
     <div id="produceralertbox{id}"></div>
 </main>
 <style>
+    .close {
+        color: #ffffff;
+    }
+
+    .form-control, select {
+        border-radius: 0;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+    }
+
     label {
         color: #ffffff;
     }
-    .bi-pencil-fill:hover{
+
+    .bi-pencil-fill:hover {
         fill: #aefda7;
     }
+
     .input-field {
         margin-bottom: 15px;
         width: 100%;
     }
-    .no-bg{
+
+    .no-bg {
         background: none;
     }
+
     #producer_boxLeft {
         padding: 0 10px 0 100px;
     }
@@ -162,7 +191,7 @@
         border-color: #c82333;
         border-radius: 0;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 20px;
         font-weight: 700;
     }
 
@@ -177,7 +206,7 @@
         border-color: #afffa8;
         border-radius: 0;
         width: 100%;
-        margin-top: 30px;
+        margin-top: 20px;
         font-weight: 700;
     }
 

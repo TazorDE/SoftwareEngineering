@@ -1,5 +1,5 @@
 <script>
-import AddProducers from "../add/AddProducers.svelte";
+import AddProducers from "../add/Producers_add.svelte";
 import ProducersEdit from "../edit/Producers_edit.svelte";
 import ProducersDelete from '../delete/Producers_delete.svelte';
 
@@ -171,6 +171,7 @@ import ProducersDelete from '../delete/Producers_delete.svelte';
         margin-right: 25px;
         position: relative;
         flex: auto;
+        outline: 0;
     }
 
     .add-producer {
@@ -205,6 +206,7 @@ import ProducersDelete from '../delete/Producers_delete.svelte';
         width: 500px;
         border-radius: 25px;
         border-width: 0;
+        outline: 0;
         padding-left: 30px;
     }
 

@@ -10,57 +10,48 @@
     let supplier_inputTelefonnummer;
     let supplier_newTelefonnummer = '';
     let supplier_inputPreisliste;
-    let supplier_newPreisliste ='';
+    let supplier_newPreisliste = '';
 
 
-    let url="http://localhost:3000/api/v1/suppliers";
+    let url = "http://localhost:3000/api/v1/suppliers";
     let method = "POST"
 
     function suppliers_add_To_DB() {
-        let product_data = {
-            "name": supplier_newName,
-            "telnr": supplier_newTelefonnummer,
-            "straße": supplier_newStraße,
-            "plz": supplier_newPLZ,
-            "ort": supplier_newOrt
-        }
-        fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                "name": supplier_newName,
-                "telnr": supplier_newTelefonnummer,
-                "straße": supplier_newStraße,
-                "plz": supplier_newPLZ,
-                "ort": supplier_newOrt
+        if (supplier_newName == '') {
+            let supplierAddAlert = document.getElementById('supplierAddAlert');
+            supplierAddAlert.innerHTML = '<div class="alert ' +
+                'alert-dismissible alert-danger">' +
+                '<button type="button" class="close" data-dismiss="alert">' +
+                '&times;</button> <strong>Error!</strong> ' +
+                'Bitte gib einen Lieferantennamen ein um fortzufahren</div>';
+        } else {
+            fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "name": supplier_newName,
+                    "telnr": supplier_newTelefonnummer,
+                    "straße": supplier_newStraße,
+                    "plz": supplier_newPLZ,
+                    "ort": supplier_newOrt
+                })
+            }).then(res => {
+                if (res.status == 200) {
+                    location.reload();
+                }
             })
-        }).then(res=>{
-            if(res.status == 200){
-                location.reload();
-            }
-        })
+        }
     }
-
-    // function resetData(){
-    //     supplier_inputName.value = '';
-    //     supplier_inputStraße.value = '';
-    //     supplier_inputPLZ.value = '';
-    //     supplier_inputOrt.value = '';
-    //     supplier_inputTelefonnummer.value = '';
-    //     supplier_inputPreisliste.value = '';
-    // }
-
-
-
 
 </script>
 
 <main>
 
     <!-- Button for modal -->
-    <button type="button" class="btn btn-secondary add-supplier" id="suppliers_buttonToggle"data-toggle="modal" data-target="#suppliers_exampleModalCenter">Lieferant hinzufügen
+    <button type="button" class="btn btn-secondary add-supplier" id="suppliers_buttonToggle" data-toggle="modal"
+            data-target="#suppliers_exampleModalCenter">Lieferant hinzufügen
     </button>
 
     <!-- Modal -->
@@ -79,7 +70,8 @@
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="suppliers_lieferantenName" placeholder="Name"
                                    aria-label="Lieferantentenname"
-                                   aria-describedby="suppliers_basic-addon1" bind:this={supplier_inputName} bind:value="{supplier_newName}">
+                                   aria-describedby="suppliers_basic-addon1" bind:this={supplier_inputName}
+                                   bind:value="{supplier_newName}">
                         </div>
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" id="suppliers_strasse" placeholder="Straße"
@@ -91,8 +83,10 @@
                                    bind:this={supplier_inputPLZ} bind:value="{supplier_newPLZ}">
                         </div>
 
-<!-- on:click={resetData()} -->
-                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonLeft" data-dismiss="modal" >Abbrechen</button>
+                        <!-- on:click={resetData()} -->
+                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonLeft"
+                                data-dismiss="modal">Abbrechen
+                        </button>
 
 
                     </div>
@@ -112,10 +106,12 @@
                         </div>
 
 
-                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonRight" data-dismiss="modal" on:click={suppliers_add_To_DB}>Lieferant hinzufügen</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="suppliers_buttonRight"
+                                on:click={suppliers_add_To_DB}>Lieferant hinzufügen
+                        </button>
 
                     </div>
-
+                    <div id="supplierAddAlert"/>
                 </div>
                 <div class="modal-footer">
 
@@ -123,10 +119,21 @@
             </div>
         </div>
     </div>
-    
+
 </main>
 
 <style>
+    .close {
+        color: #ffffff;
+    }
+
+    .form-control, select {
+        border-radius: 0;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+    }
+
     .add-supplier {
         float: right;
         margin-right: 35px;
@@ -156,10 +163,11 @@
         box-sizing: border-box;
     }
 
-    #suppliers_boxLeft{
+    #suppliers_boxLeft {
         padding: 0px 10px 0px 100px;
     }
-    #suppliers_boxRight{
+
+    #suppliers_boxRight {
         padding: 0px 100px 0px 10px;
     }
 
@@ -170,6 +178,7 @@
     #suppliers_exampleModalLongTitle {
         color: white;
     }
+
     .modal-header {
         border-bottom: 0 none;
     }
@@ -178,7 +187,7 @@
         border-top: 0 none;
     }
 
-    #suppliers_buttonLeft{
+    #suppliers_buttonLeft {
         color: white;
         font-weight: bold;
         background-color: #c82333;
@@ -186,11 +195,13 @@
         margin-top: 30px;
         border-radius: 0;
     }
-    #suppliers_buttonLeft:hover{
+
+    #suppliers_buttonLeft:hover {
         color: black;
         background-color: white;
     }
-    #suppliers_buttonRight{
+
+    #suppliers_buttonRight {
         color: #4e4e4e;
         font-weight: bold;
         background-color: #ffc825;
@@ -198,11 +209,13 @@
         margin-top: 30px;
         border-radius: 0;
     }
-    #suppliers_buttonRight:hover{
-        color:black;
+
+    #suppliers_buttonRight:hover {
+        color: black;
         background-color: white;
     }
-    #not_visible{
+
+    #not_visible {
         visibility: hidden;
     }
 

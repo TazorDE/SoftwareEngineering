@@ -135,4 +135,16 @@
         color: #504c4c;
         background-color: white;
     }
+    .close {
+        color: #ffffff;
+    }
+
+    .bi-trash:hover {
+        fill: #b21f2d;
+        stroke-width: 6;
+    }
+
+    .no-bg {
+        background: none;
+    }
 </style>

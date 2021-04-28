@@ -24,6 +24,7 @@
                     location.reload();
                 } else {
                     document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
+
                 }
             })
     }
@@ -40,7 +41,6 @@
     </button>
 
 
-    <!-- Modal used to make sure of users intent to delete -->
     <div class="modal fade" id="deleteProducersModal{id}" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -135,4 +135,16 @@
         color: #504c4c;
         background-color: white;
     }
-</style>
+    .close {
+        color: #ffffff;
+    }
+
+    .bi-trash:hover {
+        fill: #b21f2d;
+        stroke-width: 6;
+    }
+
+    .no-bg {
+        background: none;
+    }
+    </style>
