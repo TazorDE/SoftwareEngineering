@@ -212,7 +212,7 @@
         border-color: #c82333;
         border-radius: 0;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 30px;
         font-weight: 700;
     }
 
@@ -227,7 +227,7 @@
         border-color: #afffa8;
         border-radius: 0;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 30px;
         font-weight: 700;
     }
 
@@ -244,7 +244,7 @@
 
     #product_boxLeft {
         padding: 0;
-        margin-right: 60px;
+        margin-right: 40px;
         width: 100%;
     }
 
