@@ -20,7 +20,7 @@
             })
             .then(res => {
                 console.log(res);
-                if (res.status == 204) {
+                if (res.status === 204) {
                     location.reload();
                 } else {
                     document.getElementById(`supplieralertbox${id}`).innerHTML = alert;
@@ -45,10 +45,10 @@
          aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content background">
-                    <h2 class="modal-title" id="exampleModalLabel">
-                        Wollen Sie den Eintrag wirklich löschen?
-                    </h2>
-                 <div class="buttons">
+                <h2 class="modal-title">
+                    Wollen Sie den Eintrag wirklich löschen?
+                </h2>
+                <div class="buttons">
                     <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">
                         Abbrechen
                     </button>
@@ -56,8 +56,8 @@
                             data-dismiss="modal">
                         Bestätigen
                     </button>
-                 </div>
                 </div>
+            </div>
         </div>
     </div>
     <!-- Error message -->
@@ -66,9 +66,9 @@
 
 <style>
     .modal {
-        font-family: Roboto;
         margin-top: 5%;
     }
+
     label {
         color: black;
     }
@@ -81,9 +81,11 @@
         color: #504c4c;
 
     }
+
     .modal-content {
         color: #504c4c;
     }
+
     .modal-title {
         text-align: center;
         color: #ffffff;
@@ -92,10 +94,12 @@
         padding-top: 10%;
 
     }
+
     .background {
         color: #504c4c;
         background-color: #504c4c;
     }
+
     .buttons {
         display: inline;
         color: #504c4c;
@@ -103,6 +107,7 @@
         margin-top: 100px;
         text-align: center;
     }
+
     .btn {
         border-radius: 0;
         background: #504c4c;
@@ -111,15 +116,18 @@
         border: none;
         width: 30%;
     }
+
     .btn-cancel {
         color: white;
-        background-color: #c82333;
-        border-color: #c82333;
+        background: #c82333;
+        border: none;
         font-size: 20px;
+        font-weight: 700;
     }
 
     .btn-cancel:hover {
         color: black;
+        background: #ffffff;
     }
 
     .btn-delete {
@@ -133,8 +141,9 @@
 
     .btn-delete:hover {
         color: #504c4c;
-        background-color: white;
+        background: white;
     }
+
     .close {
         color: #ffffff;
     }
