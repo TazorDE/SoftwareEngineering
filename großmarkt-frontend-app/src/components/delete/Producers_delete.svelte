@@ -40,7 +40,7 @@
 
     <!-- Modal used to make sure of users intent to delete -->
     <div class="modal fade" id="deleteProducerModal{id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="exampleModalLabel">

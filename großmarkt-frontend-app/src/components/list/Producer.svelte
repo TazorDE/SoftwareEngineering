@@ -1,5 +1,5 @@
 <script>
-import AddProducers from "../add/AddProducers.svelte";
+import AddProducers from "../add/Producers_add.svelte";
 import ProducersEdit from "../edit/Producers_edit.svelte";
 import ProducersDelete from '../delete/Producers_delete.svelte';
 

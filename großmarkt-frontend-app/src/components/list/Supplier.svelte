@@ -1,5 +1,5 @@
 <script>
-    import AddSuppliers from '../add/AddSuppliers.svelte';
+    import AddSuppliers from '../add/Suppliers_add.svelte';
     import SuppliersEdit from '../edit/Suppliers_edit.svelte';
     import SuppliersDelete from '../delete/Suppliers_delete.svelte';
     /**
