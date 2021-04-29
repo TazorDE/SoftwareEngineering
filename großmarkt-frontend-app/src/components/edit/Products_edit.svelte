@@ -100,7 +100,7 @@
                         <label for="produktname">Produktname</label>
                         <input type="text" class="form-control input-field" id="produktname" bind:value="{name}"/>
                         <label for="anzahl">Anzahl</label>
-                        <input type="text" class="form-control input-field" id="anzahl" bind:value="{anzahl}"/>
+                        <input type="number" class="form-control input-field" id="anzahl" bind:value="{anzahl}"/>
                         <label for="herkunft">Herkunft</label>
                         <select class="form-control input-field" id="herkunft" bind:value="{herkunft}">
                             <option>Deutschland</option>
@@ -130,10 +130,10 @@
                     </div>
                     <div class="product_boxesBeside" id="product_boxRight">
                         <label for="verkaufspreis">Verkaufspreis</label>
-                        <input type="text" class="form-control input-field" id="verkaufspreis"
+                        <input type="number" step="0.01" class="form-control input-field" id="verkaufspreis"
                                bind:value="{verkaufspreis}"/>
                         <label for="einkaufspreis">Einkaufspreis</label>
-                        <input type="text" class="form-control input-field" id="einkaufspreis"
+                        <input type="number" step="0.01" class="form-control input-field" id="einkaufspreis"
                                bind:value="{einkaufspreis}"/>
                         <label for="bezugsquelle">Bezugsquelle</label>
                         <input type="text" class="form-control input-field" id="bezugsquelle"

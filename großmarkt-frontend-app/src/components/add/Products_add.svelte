@@ -30,6 +30,7 @@
             "bezugsquelle": produkt_newBezugsquelle
         }
         fetch(url, {
+
             method: 'POST',
             mode: 'cors',
             headers: {
